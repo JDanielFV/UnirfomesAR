@@ -131,7 +131,7 @@ font-family: outfit;
 padding: 4rem;
 background-color: #FFFFFF;
 color: #000000;
-padding: 5rem;
+padding: 5rem 20rem 5rem 20rem;
 
   @media (max-width: ${breakpoints.tablet}) {
     gap: 6rem;
@@ -190,7 +190,7 @@ export const CardMask = styled.div`
   justify-content: end;
   `  
 export const CardsContainer = styled.div`
-width: 80dvw;
+width: 60dvw;
 height: auto;
 display: flex;
 flex-direction: row;
