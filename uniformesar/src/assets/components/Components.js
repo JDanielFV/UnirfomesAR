@@ -94,7 +94,6 @@ export const TextContainer = styled.div`
 // Título
 export const Title = styled.div`
   font-size: 3.3rem;
-  text-shadow: 1px 1px 7px black;
 
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 2.5rem;
@@ -109,7 +108,6 @@ export const Title = styled.div`
 export const Copy = styled.div`
   font-size: 1.3rem;
   text-align: justify;
-  text-shadow: 1px 1px 7px black;
   font-family: outfit;
   font-weight: 400;
   margin: 2rem 0 2rem 0;
