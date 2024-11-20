@@ -2,145 +2,126 @@ import styled from "styled-components";
 
 // Breakpoints centralizados para media queries
 const breakpoints = {
-    tablet: "769px",
-    mobile: "425px",
+  tablet: "768px",
+  mobile: "425px",
 };
 
 // Sección de fondo
 export const SectionBackground = styled.div`
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100dvw;
-  height: 95dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8rem;
-  padding-top: 2rem;
-  background-image: url(${props => props.bckgrnd}); 
-  background-size: 100% 100%;
+  max-width: 100dvw;
+  height: 90dvh;
+  max-height: 100dvh;
   background-position: center;
+  background-image: url(./Fondo.jpg); 
   background-repeat: no-repeat;
-
-
+  background-size: cover;
+  
   @media (max-width: ${breakpoints.tablet}) {
-    gap: 6rem;
-    padding-top: 2rem;
+    height: auto;
   }
 
-  @media (max-width: ${breakpoints.mobile}) {
-    gap: 4rem;
-    padding-top: 2rem;
-  }
-`;
+  
+  `
 
-// Contenedor principal
+// Contenedor principal`
 export const InicioContainer = styled.div`
-  width: 80dvw;
   background-color: rgba(255, 255, 255, 0.25);
-  gap: 5rem;
+  padding: 2dvi;
+  gap: 2dvi;
+  margin: 0 10dvi 0 10dvi;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding: 1rem 2rem 2rem 2rem;
-  border-radius: 1rem;
+  justify-content: space-between;
+  border-radius: 20px;
   box-shadow: 1px 1px 5px black;
 
   @media (max-width: ${breakpoints.tablet}) {
-    flex-direction: column;
-    gap: 4rem;
-    width: 85dvw;
+  flex-direction: column;
+  margin: 30dvi 5dvi 20dvi 5dvi;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
-    flex-direction: column;
-    width: 80%;
-    padding: 1rem;
-    gap: 2rem;
+  flex-direction: column;
   }
 `;
 
 // Contenedor de logo
 export const LogoContainer = styled.img`
-  width: 30dvw;
-
+  width: 24dvi;
   @media (max-width: ${breakpoints.tablet}) {
-    width: 35dvw;
+    width: 60dvi;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
-    width: 40dvw;
   }
 `;
 
 // Contenedor de texto
 export const TextContainer = styled.div`
-  width: 40dvw;
-  text-align: start;
-  gap: 2rem;
+margin: 2dvi;
+  gap: 1dvi;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 
   @media (max-width: ${breakpoints.tablet}) {
-    width: 60dvw;
-    gap: 1.5rem;
+  gap: 5dvi;
   }
 
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 80dvw;
-    gap: 1rem;
-    text-align: center;
+  @media (max-width: ${breakpoints.mobile}){
+
   }
+
 `;
 
 // Título
 export const Title = styled.div`
-  font-size: 3.3rem;
+font-family: outfit;
+font-weight: 600;
+  font-size: 4dvi;
 
   @media (max-width: ${breakpoints.tablet}) {
-    font-size: 2.5rem;
+  font-size: 12dvi;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
-    font-size: 2.5rem;
   }
 `;
 
 // Texto de copia
 export const Copy = styled.div`
-  font-size: 1.3rem;
-  text-align: justify;
+  font-size: 1.5dvi;
   font-family: outfit;
   font-weight: 400;
-  margin: 2rem 0 2rem 0;
 
   @media (max-width: ${breakpoints.tablet}) {
-    font-size: 0.9rem;
+  font-size: 5dvi;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
-    font-size: 1rem;
   }
 `;
 
 // Sección de fondo
 export const ProductsContainer = styled.div`
 font-family: outfit;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-padding: 4rem;
-background-color: #FFFFFF;
-color: #000000;
-padding: 5rem 20rem 5rem 20rem;
-
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding: 5dvi;
+gap: 3dvi;
+  
   @media (max-width: ${breakpoints.tablet}) {
-    gap: 6rem;
-    padding-top: 2rem;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
-    gap: 4rem;
-    padding-top: 2rem;
   }
 `;
 
@@ -149,8 +130,8 @@ export const Cards = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 15rem;
-  height: 21rem;
+  width: 12rem;
+  height: 19rem;
   border-radius: 15px;
   box-shadow: 3px 5px 6px rgb(0 0 0 / 40%);
   display: flex;
@@ -159,21 +140,38 @@ export const Cards = styled.div`
   align-items: center;
   text-align: center;
   gap: 1rem;
+
+  @media (max-width: ${breakpoints.tablet}) {
+  width: 35dvi;
+  height: 55dvi;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+  }
   `;
 
-export const CardBtn = styled.button`
+export const CardBtn = styled.a`
   background-color: #FFF;
+  padding: 0.5dvi;
   color: #053A6C;
-  font-size: 1rem;
   margin: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  border-radius: 10px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+  font-size: 4.5dvi;
+  border-radius: 5px;;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+  }
+
   `
-export const CardText = styled.button`
+export const CardText = styled.p`
   font-size: 1.5rem;
   font-family: outfit;
-  font-weight: 700;
-  padding: 0;
-  background-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+  color:#FFF  
   `
 export const CardMask = styled.div`
   width: 100%;
@@ -188,16 +186,15 @@ export const CardMask = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: end;
-  `  
+  `
 export const CardsContainer = styled.div`
-width: 60dvw;
 height: auto;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
 align-items: center;
 flex-wrap: wrap;
-gap: 2rem;
+gap: 1rem;
 `
 
 export const TitleServicios = styled.p`
