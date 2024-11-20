@@ -13,9 +13,7 @@ export const SectionBackground = styled.div`
   align-items: center;
   justify-content: center;
   width: 100dvw;
-  max-width: 100dvw;
   height: 90dvh;
-  max-height: 100dvh;
   background-position: center;
   background-image: url(./Fondo.jpg); 
   background-repeat: no-repeat;
@@ -85,6 +83,7 @@ export const Title = styled.div`
 font-family: outfit;
 font-weight: 600;
   font-size: 4dvi;
+  color:#FFF;
 
   @media (max-width: ${breakpoints.tablet}) {
   font-size: 12dvi;
@@ -99,6 +98,7 @@ export const Copy = styled.div`
   font-size: 1.5dvi;
   font-family: outfit;
   font-weight: 400;
+  color:#FFF;
 
   @media (max-width: ${breakpoints.tablet}) {
   font-size: 5dvi;
