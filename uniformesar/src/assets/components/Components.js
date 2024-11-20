@@ -12,13 +12,13 @@ export const SectionBackground = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100dvw;
-  height: 90dvh;
   background-position: center;
   background-image: url(./Fondo.jpg); 
   background-repeat: no-repeat;
   background-size: cover;
-  
+  background-clip: content-box;
+  width: 100dvw;
+
   @media (max-width: ${breakpoints.tablet}) {
     height: auto;
   }
@@ -31,7 +31,7 @@ export const InicioContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.25);
   padding: 2dvi;
   gap: 2dvi;
-  margin: 0 10dvi 0 10dvi;
+  margin: 10dvi 12dvi 10dvi 12dvi;
   display: flex;
   align-items: center;
   justify-content: space-between;

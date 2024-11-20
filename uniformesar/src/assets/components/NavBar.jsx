@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // Estilos para el contenedor de la barra de navegación
 const NavbarContainer = styled.nav`
+  font-family:outfit;
   display: flex;
   justify-content: space-around;
   align-items: center;
