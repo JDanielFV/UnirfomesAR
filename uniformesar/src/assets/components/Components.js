@@ -8,7 +8,7 @@ const breakpoints = {
 
 // Sección de fondo
 export const SectionBackground = styled.div`
-  
+  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,8 +16,6 @@ export const SectionBackground = styled.div`
   background-image: url(./Fondo.jpg); 
   background-repeat: no-repeat;
   background-size: cover;
-  background-clip: content-box;
-  width: 100dvw;
 
   @media (max-width: ${breakpoints.tablet}) {
     height: auto;
@@ -141,6 +139,13 @@ export const Cards = styled.div`
   text-align: center;
   gap: 1rem;
 
+  &:hover{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    transform: scale(1.03);
+  }
+
+
   @media (max-width: ${breakpoints.tablet}) {
   width: 35dvi;
   height: 55dvi;
@@ -157,6 +162,15 @@ export const CardBtn = styled.a`
   margin: 1rem;
   font-size: 1.4rem;
   border-radius: 10px;
+  text-decoration: none;
+  
+  &:hover{
+    background-color: #053A6C;
+    color: #FFF;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 4px 1px #FFF;
+  }
 
   @media (max-width: ${breakpoints.tablet}) {
   font-size: 4.5dvi;

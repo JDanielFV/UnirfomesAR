@@ -1,7 +1,7 @@
 import NavBar from './assets/components/NavBar.jsx'
 import Inicio from './assets/components/Inicio.jsx'
 import Productos from './assets/components/Productos.jsx'
-// import Servicios from './assets/components/Servicios.jsx'
+import Servicios from './assets/components/Servicios.jsx'
 
 
 function App() {
@@ -9,8 +9,9 @@ function App() {
   return (  
     <>
     <NavBar></NavBar>
-    <Inicio></Inicio>
-    <Productos></Productos>
+    <section id='Inicio'><Inicio/></section>
+    <section id='Productos'><Productos/></section>
+    <section id='Servicios'><Servicios/></section>
     
     </>
   )

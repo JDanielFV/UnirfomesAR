@@ -1,12 +1,15 @@
+import styled from "styled-components"
 import { Copy, CopyServicios, ServicioContainer, ServicioTexto, Title, TitleServicios } from "./Components"
 
-
+const TitleSer = styled(Title)`
+color: #000;
+`
 
 
 const Servicios = () => {
   return (
     <>
-      <Title>Nuestros Servicios</Title>
+      <TitleSer>Nuestros Servicios</TitleSer>
       <Copy>Te ofrecemos una variedad de servicios de alta calidad en costura, confección, estampado en vinil y bordado, diseñados para darle vida a tus ideas y personalizar tus prendas con un toque único. Cada proyecto es atendido con dedicación, asegurando que cada detalle refleje el estilo y la calidad que buscas.</Copy>
       <ServicioContainer src="/evaluacion.jpg" color='90deg, rgba(101,9,9,1) 0%, rgba(255,255,255,0) 100%' alignItems='star'>
         <ServicioTexto>
