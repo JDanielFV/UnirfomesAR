@@ -1,41 +1,66 @@
 import styled from "styled-components"
-import { Copy, CopyServicios, ServicioContainer, ServicioTexto, Title, TitleServicios } from "./Components"
+import { Copy, CopyServicios, ServicioContainer, ServicioTexto, Title, TitleServicios, TextContainer, CardBtn } from "./Components"
 
-const TitleSer = styled(Title)`
-color: #000;
+const ServiciosContiner = styled(Title)`
+margin: 5dvi 0 5dvi 0;
+width: 100%;
+background-color: rgba(5,58,108,1);
+
 `
 
+const TextsContainer = styled(TextContainer)`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 7dvi 5dvi 7dvi 5dvi;
+`
 
 const Servicios = () => {
   return (
-    <>
-      <TitleSer>Nuestros Servicios</TitleSer>
+    <ServiciosContiner>
+      <TextsContainer>
+      <Title>Nuestros Servicios</Title>
       <Copy>Te ofrecemos una variedad de servicios de alta calidad en costura, confección, estampado en vinil y bordado, diseñados para darle vida a tus ideas y personalizar tus prendas con un toque único. Cada proyecto es atendido con dedicación, asegurando que cada detalle refleje el estilo y la calidad que buscas.</Copy>
-      <ServicioContainer src="/evaluacion.jpg" color='90deg, rgba(101,9,9,1) 0%, rgba(255,255,255,0) 100%' alignItems='star'>
+      </TextsContainer>
+      <ServicioContainer src="./bordado.webp" color='90deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='star'>
         <ServicioTexto>
-          <TitleServicios>Evaluacion de riesgos</TitleServicios>
-          <CopyServicios>Nuestros expertos analizan detalladamente cada aspecto del entorno, desde la infraestructura hasta los materiales utilizados</CopyServicios>
+          <TitleServicios>Bordado</TitleServicios>
+          <CopyServicios>Nuestra atención meticulosa
+            al detalle y la habilidad diseño
+            se combinan para dar vida a tu logo
+            o diseño en cada prenda personalizada.
+            Añade un toque de profesionalismo
+            y distinción a tus uniformes y productos.</CopyServicios>
+            <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer  >
-      <ServicioContainer src="./diseno.webp" color='270deg, rgba(101,9,9,1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
+      <ServicioContainer src="./Serigrafia.png" color='270deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
         <ServicioTexto>
-          <TitleServicios>Diseño e instalación de sistemas contra incendios</TitleServicios>
-          <CopyServicios>Desarrollamos e implementamos soluciones personalizadas, incluyendo sistemas de rociadores automáticos, alarmas contra incendio</CopyServicios>
+          <TitleServicios>Serigrafía</TitleServicios>
+          <CopyServicios>Desde diseños llamativos
+            hasta logotipos elegantes, permitiendonos cumplir con la calidad requerida en las diferentes técnicas para resaltar tu diseño.</CopyServicios>
+            <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer>
-      <ServicioContainer src="./capacitacion.jpg" color='90deg, rgba(101,9,9,1) 0%, rgba(255,255,255,0) 100%' alignItems='start'>
+      <ServicioContainer src="./Vinil.webp" color='90deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='start'>
         <ServicioTexto>
-          <TitleServicios>Capacitación en seguridad</TitleServicios>
-          <CopyServicios>ofrecemos programas de capacitación para el personal y los residentes, abordando temas cruciales como la prevención de incendios</CopyServicios>
+          <TitleServicios>Corte de vinil</TitleServicios>
+          <CopyServicios>Dale vida a tu visión con nuestro servicio de
+            estampado en vinil textil de alta calidad.
+            Recomendado para playeras tipo dry-fit, cuello redondo y gorras.</CopyServicios>
+            <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer>
-      <ServicioContainer src="./mantenimiento.jpg" color='270deg, rgba(101,9,9,1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
+      <ServicioContainer src="./Costura.png" color='270deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
         <ServicioTexto>
-          <TitleServicios>Mantenimiento y pruebas regulares</TitleServicios>
-          <CopyServicios>Nuestra empresa proporciona servicios de mantenimiento programado y pruebas regulares para garantizar el funcionamiento oóptimo de los sistemas contra incendios</CopyServicios>
+          <TitleServicios>Costura y confección</TitleServicios>
+          <CopyServicios>Nuestro equipo de expertos en confección está comprometido con la excelencia, empleando técnicas tradicionales y modernas para adaptar cada prenda a tus necesidades y estilo personal.</CopyServicios>
+          <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer>
-    </>
+    </ServiciosContiner>
   )
 }
 

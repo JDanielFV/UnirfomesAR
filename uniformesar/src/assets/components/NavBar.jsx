@@ -119,9 +119,9 @@ const Navbar = () => {
 
       {/* Enlaces en vista de escritorio */}
       <NavLinks>
-        <NavLink onClick={() => scrollToSection('productos')}>Productos</NavLink>
-        <NavLink onClick={() => scrollToSection('servicios')}>Servicios</NavLink>
-        <NavLink onClick={() => scrollToSection('contacto')}>Contacto</NavLink>
+        <NavLink onClick={() => scrollToSection('Productos')}>Productos</NavLink>
+        <NavLink onClick={() => scrollToSection('Servicios')}>Servicios</NavLink>
+        <NavLink onClick={() => scrollToSection('Contacto')}>Contacto</NavLink>
       </NavLinks>
 
       {/* Icono de menú para dispositivos móviles */}
@@ -130,9 +130,9 @@ const Navbar = () => {
       {/* Menú desplegable en móviles */}
       <MobileMenu isOpen={menuOpen}>
         <MobileNavLinks>
-          <NavLink onClick={() => { scrollToSection('productos'); toggleMenu(); }}>Productos</NavLink>
-          <NavLink onClick={() => { scrollToSection('servicios'); toggleMenu(); }}>Servicios</NavLink>
-          <NavLink onClick={() => { scrollToSection('contacto'); toggleMenu(); }}>Contacto</NavLink>
+          <NavLink onClick={() => { scrollToSection('Productos'); toggleMenu(); }}>Productos</NavLink>
+          <NavLink onClick={() => { scrollToSection('Servicios'); toggleMenu(); }}>Servicios</NavLink>
+          <NavLink onClick={() => { scrollToSection('Contacto'); toggleMenu(); }}>Contacto</NavLink>
         </MobileNavLinks>
       </MobileMenu>
     </NavbarContainer>

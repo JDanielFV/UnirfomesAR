@@ -20,16 +20,14 @@ export const SectionBackground = styled.div`
   @media (max-width: ${breakpoints.tablet}) {
     height: auto;
   }
-
-  
-  `
+  `;
 
 // Contenedor principal`
 export const InicioContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.25);
   padding: 2dvi;
   gap: 2dvi;
-  margin: 10dvi 12dvi 10dvi 12dvi;
+  margin: 10dvi 20dvi 5dvi 20dvi;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,7 +78,7 @@ margin: 2dvi;
 export const Title = styled.div`
 font-family: outfit;
 font-weight: 600;
-  font-size: 4dvi;
+  font-size: 3rem;
   color:#FFF;
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -93,7 +91,7 @@ font-weight: 600;
 
 // Texto de copia
 export const Copy = styled.div`
-  font-size: 1.5dvi;
+  font-size: 1.5rem;
   font-family: outfit;
   font-weight: 400;
   color:#FFF;
@@ -180,12 +178,22 @@ export const CardBtn = styled.a`
   @media (max-width: ${breakpoints.mobile}) {
   }
 
+
   `
+export const TextsContainer = styled(TextContainer)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2dvi 7dvi  2dvi 7dvi;
+  `
+
 export const CardText = styled.p`
   font-size: 1.5rem;
   font-family: outfit;
   font-weight: 500;
-  color:#FFF  
+  color:#FFF;
   `
 export const CardMask = styled.div`
   width: 100%;
@@ -255,8 +263,9 @@ export const ServicioContainer = styled.div`
   background-image: url(${props => props.src});
   background-size: cover;
   background-position: center;
-  padding: 5rem 4rem 5rem 4rem ;
+  padding: 15rem 4rem 15rem 4rem ;
   text-align: center;
+  background-position: top;
 
   &::before {
     content: '';
@@ -274,11 +283,15 @@ export const ServicioContainer = styled.div`
     z-index: 2;
   }
 
+  @media (max-width: ${breakpoints.tablet}) {
+  align-items: center;
+  padding: 15dvi;  
+}
 `
 export const ServicioTexto = styled.div`
   
   @media (min-width:769px) {
-    width: 50%;  }
+    width: 30%;  }
   
   @media (max-width: 768px) {
     width: 90%;
@@ -288,3 +301,22 @@ export const ServicioTexto = styled.div`
     width: 98%;
   }
 `;
+
+export const ContactContainer = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+margin: 2rem;
+`
+
+export const MapContainer = styled.iframe`
+width: 25dvw;
+height: 25dvw;
+border: solid 10px #053A6C;
+border-radius: 20px;
+`
+
+export const ContactList = styled.ul`
+
+`
