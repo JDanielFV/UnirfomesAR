@@ -7,7 +7,8 @@ const Footer = styled.nav`
   flex-wrap: wrap;
   align-items: top;
   padding: 3rem 0rem 3rem 0rem;
-  background-color: #3C0000;
+  background-color: #053A6C;
+  font-family: outfit;
 `
 const FooterContainer = styled.div`
 color: #FFFFFF;
@@ -26,12 +27,18 @@ font-size: 1.3rem;
 margin-bottom: .5rem;
 font-weight: 500;
 `
-const Disclaimer = styled.nav`
-font-size: 1.2rem;
-background-color: #3c0000;
+const Disclaimer = styled.a`
+font-size: 1rem;
+background-color: #053A6C;
 color: #FFFFFF;
 text-align: center;
 padding: 1rem 0rem 1rem 0rem;
+font-family: outfit;
+display: flex;
+align-items: center;
+text-align: center;
+text-decoration: none;
+width: 100%;
 `
 
 const Navbar = () => {
@@ -48,11 +55,9 @@ const Navbar = () => {
             <Footer>
                 <FooterContainer>
                     <FooterTitle>Mapa de sitio</FooterTitle>
-                    <FooterLink onClick={() => scrollToSection('sobre-nosotros')}>Conocenos</FooterLink>
+                    <FooterLink onClick={() => scrollToSection('Productos')}>Productos</FooterLink>
                     <FooterLink onClick={() => scrollToSection('servicios')}>Servicios</FooterLink>
-                    <FooterLink onClick={() => scrollToSection('cursos')}>Cursos</FooterLink>
-                    <FooterLink onClick={() => scrollToSection('promo-app')}>Nuestra App</FooterLink>
-                    <FooterLink onClick={() => scrollToSection('contacto')}>Contacto</FooterLink>
+                    <FooterLink onClick={() => scrollToSection('Contacto')}>Contacto</FooterLink>
                 </FooterContainer>
                 <FooterContainer>
                     <FooterTitle>Contactanos</FooterTitle>
@@ -62,7 +67,7 @@ const Navbar = () => {
                     <FooterLink href='https://www.linkedin.com/company/petrov-soluciones-contra-incendio/'>LinkedIn</FooterLink>
                 </FooterContainer>
             </Footer>
-            <Disclaimer>Desarrollado por: Danika - 2024</Disclaimer>
+            <Disclaimer href='http://wa.me/+525649770838'>Desarrollado por: Daniel Flores - 2024</Disclaimer>
         </>
     );
 };

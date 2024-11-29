@@ -308,15 +308,61 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 margin: 2rem;
+gap: 4rem;
+font-family: outfit;
+
+@media (max-width: ${breakpoints.tablet}) {
+flex-direction: column;
+}
+
 `
 
 export const MapContainer = styled.iframe`
-width: 25dvw;
-height: 25dvw;
+width: 30dvw;
+height: 30dvw;
 border: solid 10px #053A6C;
 border-radius: 20px;
+
+@media (max-width: ${breakpoints.tablet}) {
+  width: 75dvw;
+  height: 75dvw;
+  border: solid 6px #053A6C;
+}
 `
 
-export const ContactList = styled.ul`
+export const ContactList = styled.div`
+display: flex;
+flex-direction: column;
+gap: 3rem;
 
+@media (max-width: ${breakpoints.tablet}) {
+gap: 1rem;
+}
+
+
+`
+export const ContactIcon = styled.img`
+width: 55px;
+height: 55px;
+
+@media (max-width: ${breakpoints.tablet}) {
+width: 35px;
+height: 35px;
+}
+
+
+`
+export const ContactText = styled.a`
+display: flex;
+align-items: center;
+gap: 1rem;
+text-decoration: none;
+font-size: 2dvi;
+color: #000;
+cursor: pointer;
+
+@media (max-width: ${breakpoints.tablet}) {
+width: 75dvw;
+font-size: 5dvi;
+}
 `

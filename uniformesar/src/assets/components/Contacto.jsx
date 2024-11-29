@@ -4,12 +4,26 @@ import {
   TextsContainer,
   MapContainer,
   ContactList,
-  ContactContainer
+  ContactContainer,
+  ContactIcon,
+  ContactText,
 } from "./Components";
 
 const CTitle = styled(Title)`
   color: #000;
 `;
+
+function abrirRedSocial() {
+  const opcion = prompt("¿Qué red social quieres abrir? Escribe:\n1 para Facebook\n2 para Instagram");
+
+  if (opcion === "1") {
+      window.open('https://www.facebook.com/pages/Ar-Bordados-Estampado-y-Uniformes/575686889276356', '_blank');
+  } else if (opcion === "2") {
+      window.open('https://www.instagram.com/uniformesar/', '_blank');
+  } else {
+      alert("Por favor elige una opción.");
+  }
+}
 
 const ContactForm = () => {
   return (
@@ -26,7 +40,11 @@ const ContactForm = () => {
           title="Google Maps Embed"
         ></MapContainer>
         <ContactList>
-          <li></li>
+          <ContactText href="https://maps.app.goo.gl/QoeqGcHGB2z7rXL77"><ContactIcon src="ubicacion.svg"></ContactIcon>CallePozo Grande #2, Tecámac.</ContactText>
+          <ContactText href="https://wa.me/+525621288935"><ContactIcon src="whatsapp.svg"></ContactIcon>56-2128-8935</ContactText>
+          <ContactText href="tel:5589500569,103"><ContactIcon src="telefono.svg"></ContactIcon>55-8950-0569 ext. 103</ContactText>
+          <ContactText href="#" onClick={abrirRedSocial}><ContactIcon src="facebook.svg"></ContactIcon>A&R Bordados Estampados</ContactText>
+          <ContactText href="mailto:contacto@uniformesar.com"><ContactIcon src="mail.svg"></ContactIcon>contacto@uniformesar.com</ContactText>
         </ContactList>
       </ContactContainer>
     </>
