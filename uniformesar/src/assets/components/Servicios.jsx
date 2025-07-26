@@ -24,7 +24,7 @@ const Servicios = () => {
       <Title>Nuestros Servicios</Title>
       <Copy>Te ofrecemos una variedad de servicios de alta calidad en costura, confección, estampado en vinil y bordado, diseñados para darle vida a tus ideas y personalizar tus prendas con un toque único. Cada proyecto es atendido con dedicación, asegurando que cada detalle refleje el estilo y la calidad que buscas.</Copy>
       </TextsContainer>
-      <ServicioContainer src="./bordado.webp" color='90deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='star'>
+      <ServicioContainer src="/bordado.webp" color='90deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='star'>
         <ServicioTexto>
           <TitleServicios>Bordado</TitleServicios>
           <CopyServicios>Nuestra atención meticulosa
@@ -36,7 +36,7 @@ const Servicios = () => {
             <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer  >
-      <ServicioContainer src="./Serigrafia.png" color='270deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
+      <ServicioContainer src="/Serigrafia.png" color='270deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
         <ServicioTexto>
           <TitleServicios>Serigrafía</TitleServicios>
           <CopyServicios>Desde diseños llamativos
@@ -44,7 +44,7 @@ const Servicios = () => {
             <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer>
-      <ServicioContainer src="./Vinil.webp" color='90deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='start'>
+      <ServicioContainer src="/Vinil.webp" color='90deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='start'>
         <ServicioTexto>
           <TitleServicios>Corte de vinil</TitleServicios>
           <CopyServicios>Dale vida a tu visión con nuestro servicio de
@@ -53,7 +53,7 @@ const Servicios = () => {
             <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer>
-      <ServicioContainer src="./Costura.png" color='270deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
+      <ServicioContainer src="/Costura.png" color='270deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
         <ServicioTexto>
           <TitleServicios>Costura y confección</TitleServicios>
           <CopyServicios>Nuestro equipo de expertos en confección está comprometido con la excelencia, empleando técnicas tradicionales y modernas para adaptar cada prenda a tus necesidades y estilo personal.</CopyServicios>
