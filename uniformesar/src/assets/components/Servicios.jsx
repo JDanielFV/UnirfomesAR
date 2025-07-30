@@ -33,7 +33,7 @@ const Servicios = () => {
             o diseño en cada prenda personalizada.
             Añade un toque de profesionalismo
             y distinción a tus uniformes y productos.</CopyServicios>
-            <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
+            <CardBtn href={'https://wa.me/525621288935?text=Hola,%20me%20interesa%20el%20servicio%20de%20Bordado,%20me%20regalas%20m%C3%A1s%20informaci%C3%B3n?'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer  >
       <ServicioContainer src="/Serigrafia.png" color='270deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
@@ -41,7 +41,7 @@ const Servicios = () => {
           <TitleServicios>Serigrafía</TitleServicios>
           <CopyServicios>Desde diseños llamativos
             hasta logotipos elegantes, permitiendonos cumplir con la calidad requerida en las diferentes técnicas para resaltar tu diseño.</CopyServicios>
-            <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
+            <CardBtn href={'https://wa.me/525621288935?text=Hola,%20me%20interesa%20el%20servicio%20de%20Serigraf%C3%ADa,%20me%20regalas%20m%C3%A1s%20informaci%C3%B3n?'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer>
       <ServicioContainer src="/Vinil.webp" color='90deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='start'>
@@ -50,14 +50,14 @@ const Servicios = () => {
           <CopyServicios>Dale vida a tu visión con nuestro servicio de
             estampado en vinil textil de alta calidad.
             Recomendado para playeras tipo dry-fit, cuello redondo y gorras.</CopyServicios>
-            <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
+            <CardBtn href={'https://wa.me/525621288935?text=Hola,%20me%20interesa%20el%20servicio%20de%20Corte%20de%20vinil,%20me%20regalas%20m%C3%A1s%20informaci%C3%B3n?'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer>
       <ServicioContainer src="/Costura.png" color='270deg, rgba(5, 58, 108, 1) 0%, rgba(255,255,255,0) 100%' alignItems='end'>
         <ServicioTexto>
           <TitleServicios>Costura y confección</TitleServicios>
           <CopyServicios>Nuestro equipo de expertos en confección está comprometido con la excelencia, empleando técnicas tradicionales y modernas para adaptar cada prenda a tus necesidades y estilo personal.</CopyServicios>
-          <CardBtn href={'#'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
+          <CardBtn href={'https://wa.me/525621288935?text=Hola,%20me%20interesa%20el%20servicio%20de%20Costura%20y%20confecci%C3%B3n,%20me%20regalas%20m%C3%A1s%20informaci%C3%B3n?'} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
         </ServicioTexto>
       </ServicioContainer>
     </ServiciosContiner>
