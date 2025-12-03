@@ -61,13 +61,12 @@ const Navbar = () => {
                 </FooterContainer>
                 <FooterContainer>
                     <FooterTitle>Contactanos</FooterTitle>
-                    <FooterLink href='tel:6863567581'>Telefono</FooterLink>
-                    <FooterLink href='mailto:contacto@petrovsci.com.mx'>Correo</FooterLink>
-                    <FooterLink href='https://www.facebook.com/profile.php?id=61555431474610'>Facebook</FooterLink>
-                    <FooterLink href='https://www.linkedin.com/company/petrov-soluciones-contra-incendio/'>LinkedIn</FooterLink>
+                    <FooterLink href='tel:+525621288935'>Telefono</FooterLink>
+                    <FooterLink href='mailto:contacto@uniformesar.com'>Correo</FooterLink>
+                    <FooterLink href='https://www.facebook.com/profile.php?id=61584467946957'>Facebook</FooterLink>
                 </FooterContainer>
             </Footer>
-            <Disclaimer href='http://wa.me/+525649770838'>Desarrollado por: Daniel Flores - 2024</Disclaimer>
+            <Disclaimer href='http://wa.me/+525649770838'>Desarrollado por: Daniel Flores - 2026</Disclaimer>
         </>
     );
 };

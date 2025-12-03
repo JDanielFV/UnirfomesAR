@@ -17,7 +17,7 @@ function abrirRedSocial() {
   const opcion = prompt("¿Qué red social quieres abrir? Escribe:\n1 para Facebook\n2 para Instagram");
 
   if (opcion === "1") {
-      window.open('https://www.facebook.com/pages/Ar-Bordados-Estampado-y-Uniformes/575686889276356', '_blank');
+      window.open('https://www.facebook.com/profile.php?id=61584467946957', '_blank');
   } else if (opcion === "2") {
       window.open('https://www.instagram.com/uniformesar/', '_blank');
   } else {
