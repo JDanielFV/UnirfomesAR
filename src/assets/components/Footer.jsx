@@ -65,6 +65,11 @@ const Navbar = () => {
                     <FooterLink href='mailto:contacto@uniformesar.com'>Correo</FooterLink>
                     <FooterLink href='https://www.facebook.com/profile.php?id=61584467946957'>Facebook</FooterLink>
                 </FooterContainer>
+                <FooterContainer>
+                    <FooterTitle>Horarios</FooterTitle>
+                    <FooterLink as="div" style={{ cursor: 'default' }}>Lunes a Viernes</FooterLink>
+                    <FooterLink as="div" style={{ cursor: 'default' }}>9:00 am a 2:00 pm</FooterLink>
+                </FooterContainer>
             </Footer>
             <Disclaimer href='http://wa.me/+525649770838'>Desarrollado por: Daniel Flores - 2026</Disclaimer>
         </>

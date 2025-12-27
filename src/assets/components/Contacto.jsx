@@ -17,11 +17,11 @@ function abrirRedSocial() {
   const opcion = prompt("¿Qué red social quieres abrir? Escribe:\n1 para Facebook\n2 para Instagram");
 
   if (opcion === "1") {
-      window.open('https://www.facebook.com/profile.php?id=61584467946957', '_blank');
+    window.open('https://www.facebook.com/profile.php?id=61584467946957', '_blank');
   } else if (opcion === "2") {
-      window.open('https://www.instagram.com/uniformesar/', '_blank');
+    window.open('https://www.instagram.com/uniformesar/', '_blank');
   } else {
-      alert("Por favor elige una opción.");
+    alert("Por favor elige una opción.");
   }
 }
 
@@ -43,6 +43,7 @@ const ContactForm = () => {
           <ContactText href="https://maps.app.goo.gl/QoeqGcHGB2z7rXL77"><ContactIcon src="ubicacion.svg"></ContactIcon>CallePozo Grande #2, Tecámac.</ContactText>
           <ContactText href="https://wa.me/+525621288935"><ContactIcon src="whatsapp.svg"></ContactIcon>56-2128-8935</ContactText>
           <ContactText href="tel:5589500569,103"><ContactIcon src="telefono.svg"></ContactIcon>55-8950-0569 ext. 103</ContactText>
+          <ContactText as="div" style={{ cursor: 'default' }}><ContactIcon src="horario.svg"></ContactIcon>Lunes a Viernes de 9:00 am a 2:00 pm</ContactText>
           <ContactText href="#" onClick={abrirRedSocial}><ContactIcon src="facebook.svg"></ContactIcon>A&R Bordados Estampados</ContactText>
           <ContactText href="mailto:contacto@uniformesar.com"><ContactIcon src="mail.svg"></ContactIcon>contacto@uniformesar.com</ContactText>
         </ContactList>
