@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing ARIA Labels on Icon-only Buttons
+**Learning:** Found an accessibility issue pattern where styled-components buttons containing only decorative images (like `<Bajar><img src='./Bajar.svg'/></Bajar>`) lack accessible names. Screen readers announce these as just "button" or the filename, making their purpose unclear to assistive technology users.
+**Action:** Always add `aria-label` to icon-only interactive elements to provide an accessible name, and set `alt="" aria-hidden="true"` on the inner decorative `<img>` to prevent redundant or unhelpful announcements.
