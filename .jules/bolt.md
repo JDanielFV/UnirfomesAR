@@ -1,0 +1,3 @@
+## 2024-05-24 - React Gallery Optimization Learning
+**Learning:** Using array indexes as keys in React lists alongside intensive background image loads in `styled-components` caused significant UI jank when modal states toggled. Lazy loading alone (`loading="lazy"`) isn't enough when React constantly tears down and rebuilds DOM nodes due to unstable keys during state updates.
+**Action:** Always pair `loading="lazy"` on image grids with stable unique keys (like image URLs) to ensure React's reconciliation engine can preserve DOM nodes during unrelated state updates (like modal open/close toggles).
