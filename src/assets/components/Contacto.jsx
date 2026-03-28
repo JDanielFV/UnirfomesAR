@@ -17,9 +17,11 @@ function abrirRedSocial() {
   const opcion = prompt("¿Qué red social quieres abrir? Escribe:\n1 para Facebook\n2 para Instagram");
 
   if (opcion === "1") {
-    window.open('https://www.facebook.com/profile.php?id=61584467946957', '_blank');
+    // 🛡️ Sentinel: Fixed tabnabbing vulnerability by adding 'noopener,noreferrer'
+    window.open('https://www.facebook.com/profile.php?id=61584467946957', '_blank', 'noopener,noreferrer');
   } else if (opcion === "2") {
-    window.open('https://www.instagram.com/uniformesar/', '_blank');
+    // 🛡️ Sentinel: Fixed tabnabbing vulnerability by adding 'noopener,noreferrer'
+    window.open('https://www.instagram.com/uniformesar/', '_blank', 'noopener,noreferrer');
   } else {
     alert("Por favor elige una opción.");
   }
