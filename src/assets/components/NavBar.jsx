@@ -49,10 +49,14 @@ const NavLink = styled.li`
 `;
 
 // Icono de menú para dispositivos móviles
-const MenuIcon = styled.div`
+const MenuIcon = styled.button`
   display: none;
   font-size: 2.5rem;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
 
   @media (max-width: 768px) {
     display: block; // Mostrar en dispositivos móviles
@@ -125,10 +129,17 @@ const Navbar = () => {
       </NavLinks>
 
       {/* Icono de menú para dispositivos móviles */}
-      <MenuIcon onClick={toggleMenu}>&#9776;</MenuIcon>
+      <MenuIcon
+        onClick={toggleMenu}
+        aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+        aria-expanded={menuOpen}
+        aria-controls="mobile-menu"
+      >
+        &#9776;
+      </MenuIcon>
 
       {/* Menú desplegable en móviles */}
-      <MobileMenu isOpen={menuOpen}>
+      <MobileMenu id="mobile-menu" isOpen={menuOpen}>
         <MobileNavLinks>
           <NavLink onClick={() => { scrollToSection('Productos'); toggleMenu(); }}>Productos</NavLink>
           <NavLink onClick={() => { scrollToSection('Servicios'); toggleMenu(); }}>Servicios</NavLink>
