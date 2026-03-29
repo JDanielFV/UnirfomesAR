@@ -1,0 +1,3 @@
+## 2025-03-29 - Mobile Menu Toggle Accessibility
+**Learning:** The mobile menu toggle in `NavBar.jsx` was previously implemented as a `<div>`, making it completely inaccessible to keyboard users and screen readers. Changing it to a native `<button>` and ensuring CSS resets (`background: none; border: none; padding: 0; color: inherit;`) preserved the visual design while instantly adding focusability and native key events (Enter/Space).
+**Action:** When inspecting interactive components, verify they use native HTML elements (like `<button>` or `<input>`) instead of generic containers like `<div>` or `<span>`, and ensure they have adequate ARIA states (`aria-expanded`, `aria-controls`, `aria-label`).
