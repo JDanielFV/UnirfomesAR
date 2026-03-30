@@ -1,0 +1,17 @@
+--- src/assets/components/Cta.jsx
++++ src/assets/components/Cta.jsx
+@@ -1,4 +1,5 @@
+ import styled from 'styled-components';
++import PropTypes from 'prop-types';
+
+ // Estilos para el botón
+ const ScrollButton = styled.button`
+@@ -32,4 +33,8 @@
+   return <ScrollButton onClick={scrollToContact}>{text}</ScrollButton>;
+ };
+
++ScrollToContactButton.propTypes = {
++  text: PropTypes.string.isRequired,
++};
++
+ export default ScrollToContactButton;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 // Estilos para el botón
 const ScrollButton = styled.button`
@@ -32,10 +31,6 @@ const ScrollToContactButton = ({ text }) => {
   };
 
   return <ScrollButton onClick={scrollToContact}>{text}</ScrollButton>;
-};
-
-ScrollToContactButton.propTypes = {
-  text: PropTypes.string.isRequired,
 };
 
 export default ScrollToContactButton;

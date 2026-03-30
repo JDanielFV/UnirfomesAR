@@ -1,5 +1,5 @@
+import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -67,12 +67,6 @@ const ModalGallery = ({ open, onClose, images }) => {
       </ModalContent>
     </ModalOverlay>
   );
-};
-
-ModalGallery.propTypes = {
-  open: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ModalGallery;
