@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Cards, Copy, ProductsContainer, Title, CardBtn, CardText, CardMask, CardsContainer, TextsContainer } from "./Components"
 import ModalGallery from "./ModalGallery";
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const productData = [
@@ -56,6 +57,17 @@ const galleryImages = [
   '/IMG-20250203-WA0047.jpg',
 ];
 
+// Memoize the individual product card to prevent unnecessary re-renders
+const ProductCard = React.memo(({ product }) => (
+  <Cards bckgrnd={product.bckgrnd}>
+    <CardMask>
+      <CardText>{product.text}</CardText>
+      <CardBtn href={product.href} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
+    </CardMask>
+  </Cards>
+));
+ProductCard.displayName = "ProductCard";
+
 const Productos = () => {
   const [openGallery, setOpenGallery] = useState(false);
   return (
@@ -74,12 +86,7 @@ const Productos = () => {
       </TextsContainer>
       <CardsContainer>
         {productData.map((product, index) => (
-          <Cards key={index} bckgrnd={product.bckgrnd}>
-            <CardMask>
-              <CardText>{product.text}</CardText>
-              <CardBtn href={product.href} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
-            </CardMask>
-          </Cards>
+          <ProductCard key={product.bckgrnd || index} product={product} />
         ))}
       </CardsContainer>
       <ModalGallery open={openGallery} onClose={()=>setOpenGallery(false)} images={galleryImages} />
