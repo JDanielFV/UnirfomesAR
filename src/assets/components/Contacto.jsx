@@ -16,10 +16,11 @@ const CTitle = styled(Title)`
 function abrirRedSocial() {
   const opcion = prompt("¿Qué red social quieres abrir? Escribe:\n1 para Facebook\n2 para Instagram");
 
+  // Fix: Add noopener,noreferrer to window.open calls to prevent tabnabbing vulnerability
   if (opcion === "1") {
-    window.open('https://www.facebook.com/profile.php?id=61584467946957', '_blank');
+    window.open('https://www.facebook.com/profile.php?id=61584467946957', '_blank', 'noopener,noreferrer');
   } else if (opcion === "2") {
-    window.open('https://www.instagram.com/uniformesar/', '_blank');
+    window.open('https://www.instagram.com/uniformesar/', '_blank', 'noopener,noreferrer');
   } else {
     alert("Por favor elige una opción.");
   }
