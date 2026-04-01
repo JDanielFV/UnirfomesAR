@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const ModalOverlay = styled.div`
@@ -61,7 +60,7 @@ const ModalGallery = ({ open, onClose, images }) => {
       <ModalContent>
         <GalleryGrid>
           {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
+            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={img} loading="lazy" />
           ))}
         </GalleryGrid>
       </ModalContent>
