@@ -1,6 +1,6 @@
 import { Cards, Copy, ProductsContainer, Title, CardBtn, CardText, CardMask, CardsContainer, TextsContainer } from "./Components"
 import ModalGallery from "./ModalGallery";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import styled from "styled-components";
 
 const productData = [
@@ -58,6 +58,19 @@ const galleryImages = [
 
 const Productos = () => {
   const [openGallery, setOpenGallery] = useState(false);
+
+  // Memoize the product cards to prevent re-renders when toggling the gallery modal
+  const renderedProducts = useMemo(() => {
+    return productData.map((product) => (
+      <Cards key={product.bckgrnd} bckgrnd={product.bckgrnd}>
+        <CardMask>
+          <CardText>{product.text}</CardText>
+          <CardBtn href={product.href} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
+        </CardMask>
+      </Cards>
+    ));
+  }, []);
+
   return (
     <ProductsContainer>
       <TextsContainer>
@@ -73,14 +86,7 @@ const Productos = () => {
         </button>
       </TextsContainer>
       <CardsContainer>
-        {productData.map((product, index) => (
-          <Cards key={index} bckgrnd={product.bckgrnd}>
-            <CardMask>
-              <CardText>{product.text}</CardText>
-              <CardBtn href={product.href} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
-            </CardMask>
-          </Cards>
-        ))}
+        {renderedProducts}
       </CardsContainer>
       <ModalGallery open={openGallery} onClose={()=>setOpenGallery(false)} images={galleryImages} />
     </ProductsContainer>
