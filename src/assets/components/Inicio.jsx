@@ -31,7 +31,9 @@ const Inicio = () => (
           <Copy>Con más de 18 años de experiencia que nos respaldan siendo lideres en la manofactura de uniformes industriales, escolares, ejecutivos, hospitalarios, etc. Complementando con los servicios de bordado, serigrafía, y vinil textil, entre otros.</Copy>
         </TextContainer>
       </InicioContainer>
-      <Bajar onClick={Scroll}><img src='./Bajar.svg'/></Bajar>
+      <Bajar onClick={Scroll} aria-label="Ir a Productos">
+        <img src='./Bajar.svg' alt="Icono para bajar a productos" />
+      </Bajar>
     </SectionBackground>
   </>
 );
