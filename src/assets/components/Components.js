@@ -121,8 +121,15 @@ gap: 3dvi;
   }
 `;
 
-export const Cards = styled.div`
-  background-image: url(${props => props.bckgrnd}); 
+// ⚡ Bolt Performance Optimization:
+// Using .attrs for dynamic background images prevents styled-components from
+// generating and injecting a new CSS class for every unique image URL,
+// significantly reducing style recalculations and <style> tag bloat.
+export const Cards = styled.div.attrs(props => ({
+  style: {
+    backgroundImage: `url(${props.bckgrnd})`,
+  },
+}))`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -252,15 +259,25 @@ export const CopyServicios = styled.p`
     max-width: 95%; /* Ajustar el ancho en pantallas pequeñas */
   }
 `
-export const ServicioContainer = styled.div`
+// ⚡ Bolt Performance Optimization:
+// Mapping dynamic props to CSS variables via .attrs prevents excessive CSS
+// class generation for every unique image/color/alignment combination.
+// This preserves ::before pseudo-element functionality while boosting performance.
+export const ServicioContainer = styled.div.attrs(props => ({
+  style: {
+    '--align-items': props.alignItems,
+    '--bg-image': `url(${props.src})`,
+    '--gradient-color': props.color,
+  },
+}))`
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.alignItems};
+  align-items: var(--align-items);
   justify-content: space-between;
   height: auto;
   width: auto;
-  background-image: url(${props => props.src});
+  background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   padding: 15rem 4rem 15rem 4rem ;
@@ -274,7 +291,7 @@ export const ServicioContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(${props => props.color});
+    background: linear-gradient(var(--gradient-color));
     z-index: 1;
   }
 
