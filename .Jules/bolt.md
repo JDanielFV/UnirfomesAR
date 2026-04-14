@@ -1,0 +1,3 @@
+## 2024-04-14 - Styled Components Dynamic Props Overhead
+**Learning:** In styled-components, passing rapidly changing or numerous unique dynamic props (like specific image URLs for a large list of products) directly to the template literal causes styled-components to generate and inject a new, unique CSS class for every single instance. This bloats the injected style tags and can cause significant memory overhead and performance degradation during rendering.
+**Action:** When a styled-component requires dynamic values that are unique per instance (e.g., background-image), always use the `.attrs` constructor to apply them as inline styles. This prevents styled-components from creating separate CSS classes while still allowing the component to remain encapsulated.
