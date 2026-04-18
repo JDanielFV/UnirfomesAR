@@ -71,7 +71,8 @@ const Navbar = () => {
                     <FooterLink as="div" style={{ cursor: 'default' }}>9:00 am a 2:00 pm</FooterLink>
                 </FooterContainer>
             </Footer>
-            <Disclaimer href='http://wa.me/+525649770838'>Desarrollado por: Daniel Flores - 2026</Disclaimer>
+            {/* Upgrade to HTTPS to prevent unencrypted data transmission */}
+            <Disclaimer href='https://wa.me/+525649770838'>Desarrollado por: Daniel Flores - 2026</Disclaimer>
         </>
     );
 };
