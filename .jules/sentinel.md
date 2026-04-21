@@ -1,0 +1,4 @@
+## 2024-05-24 - Unencrypted Data Transmission via HTTP Link
+**Vulnerability:** Found an external link to WhatsApp using the unencrypted `http://` protocol instead of `https://`.
+**Learning:** This specific project integrates heavily with the WhatsApp URL API (`wa.me`) for lead generation. While some links were HTTPS, the footer link was inadvertently left as HTTP. This inconsistency highlights a need to standardize how external API links are constructed across components to avoid unencrypted transmission, particularly since user input parameters (like `?text=`) are sometimes passed in these URLs in other parts of the app.
+**Prevention:** Always enforce HTTPS for external links, particularly those related to communication or messaging. Consider creating a centralized constant or utility function for generating base external URLs to ensure HTTPS is enforced globally.
