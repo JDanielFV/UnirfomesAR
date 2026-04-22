@@ -1,4 +1,4 @@
-import React from "react";
+import { memo, useMemo } from "react";
 import styled from "styled-components";
 
 const ModalOverlay = styled.div`
@@ -53,16 +53,27 @@ const CloseBtn = styled.button`
   z-index: 1001;
 `;
 
+// Extract list item and memoize to prevent unnecessary re-renders
+const MemoizedImage = memo(({ src, alt }) => (
+  // Use lazy loading to reduce initial network payload and optimize performance
+  <GalleryImg src={src} alt={alt} loading="lazy" />
+));
+
 const ModalGallery = ({ open, onClose, images }) => {
+  // Memoize mapping logic to prevent recalculation on unrelated re-renders
+  const memoizedImages = useMemo(() => {
+    return images.map((img, idx) => (
+      <MemoizedImage src={img} alt={`Galería ${idx + 1}`} key={idx} />
+    ));
+  }, [images]);
+
   if (!open) return null;
   return (
     <ModalOverlay>
       <CloseBtn onClick={onClose}>&times;</CloseBtn>
       <ModalContent>
         <GalleryGrid>
-          {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
-          ))}
+          {memoizedImages}
         </GalleryGrid>
       </ModalContent>
     </ModalOverlay>
