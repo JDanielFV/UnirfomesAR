@@ -1,0 +1,1 @@
+import{j as e,m as i,n as r,R as s}from"./Servicios-CC0x9U83.js";function t(){return e.jsx("main",{children:e.jsx("section",{id:"Servicios",children:e.jsx(i,{})})})}r(document.getElementById("root")).render(e.jsx(s.StrictMode,{children:e.jsx(t,{})}));
