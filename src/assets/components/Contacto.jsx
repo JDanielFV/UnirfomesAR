@@ -41,8 +41,10 @@ const ContactForm = () => {
           title="Google Maps Embed"
         ></MapContainer>
         <ContactList>
-          <ContactText href="https://maps.app.goo.gl/QoeqGcHGB2z7rXL77"><ContactIcon src="ubicacion.svg"></ContactIcon>CallePozo Grande #2, Tecámac.</ContactText>
-          <ContactText href="https://wa.me/+525621288935"><ContactIcon src="whatsapp.svg"></ContactIcon>56-2128-8935</ContactText>
+          {/* Security: Prevent tabnabbing by adding target=_blank with rel=noopener noreferrer */}
+          <ContactText href="https://maps.app.goo.gl/QoeqGcHGB2z7rXL77" target="_blank" rel="noopener noreferrer"><ContactIcon src="ubicacion.svg"></ContactIcon>CallePozo Grande #2, Tecámac.</ContactText>
+          {/* Security: Prevent tabnabbing by adding target=_blank with rel=noopener noreferrer */}
+          <ContactText href="https://wa.me/+525621288935" target="_blank" rel="noopener noreferrer"><ContactIcon src="whatsapp.svg"></ContactIcon>56-2128-8935</ContactText>
           <ContactText href="tel:5589500569,103"><ContactIcon src="telefono.svg"></ContactIcon>55-8950-0569 ext. 103</ContactText>
           <ContactText as="div" style={{ cursor: 'default' }}><ContactIcon src="horario.svg"></ContactIcon>Lunes a Viernes de 9:00 am a 2:00 pm</ContactText>
           <ContactText href="#" onClick={abrirRedSocial}><ContactIcon src="facebook.svg"></ContactIcon>A&R Bordados Estampados</ContactText>
