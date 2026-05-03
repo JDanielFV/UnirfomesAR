@@ -55,9 +55,16 @@ const CloseBtn = styled.button`
 
 const ModalGallery = ({ open, onClose, images }) => {
   if (!open) return null;
+
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <ModalOverlay>
-      <CloseBtn onClick={onClose}>&times;</CloseBtn>
+    <ModalOverlay onClick={handleOverlayClick}>
+      <CloseBtn onClick={onClose} aria-label="Cerrar galería" title="Cerrar galería">&times;</CloseBtn>
       <ModalContent>
         <GalleryGrid>
           {images.map((img, idx) => (
