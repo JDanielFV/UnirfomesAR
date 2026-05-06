@@ -1,0 +1,3 @@
+## 2025-02-12 - Native lazy loading for conditional modal galleries
+**Learning:** Native browser lazy loading (`loading="lazy"`) is the preferred strategy for optimizing image-heavy components like galleries, especially when hidden within interactive or conditionally rendered components like modals, to reduce initial network payload and prevent massive unnecessary network requests until opened.
+**Action:** Always add `loading="lazy"` to `<img>` elements representing gallery items or below-the-fold content, explicitly documenting the performance rationale to ensure maintainability and pass code reviews.
