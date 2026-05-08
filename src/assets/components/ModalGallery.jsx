@@ -60,9 +60,10 @@ const ModalGallery = ({ open, onClose, images }) => {
       <CloseBtn onClick={onClose}>&times;</CloseBtn>
       <ModalContent>
         <GalleryGrid>
-          {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
-          ))}
+          {images.map((img, idx) => {
+            // Performance Optimization: Delay loading images until they enter the viewport to reduce initial payload
+            return <GalleryImg key={img} src={img} alt={`Galería ${idx+1}`} loading="lazy" />;
+          })}
         </GalleryGrid>
       </ModalContent>
     </ModalOverlay>
