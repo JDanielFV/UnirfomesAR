@@ -1,0 +1,3 @@
+## 2025-05-12 - Prevent Unnecessary Re-renders and Network Payload
+**Learning:** React re-allocates inline style objects on every render, causing optimized child components to unnecessarily re-render. Additionally, hidden elements like modal galleries load all images simultaneously if lazy loading isn't utilized, impacting initial network performance.
+**Action:** Always extract static inline style objects outside the component scope (e.g., as constants or styled-components). Apply native browser lazy loading (`loading="lazy"`) to images in off-screen or conditionally rendered interactive components (like modals) to defer network requests.

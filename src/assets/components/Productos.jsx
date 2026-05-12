@@ -22,6 +22,18 @@ color: #000;
 
 `
 
+const galleryBtnStyle = {
+  marginTop: '1.5rem',
+  padding: '0.7rem 1.5rem',
+  fontSize: '1.1rem',
+  borderRadius: '8px',
+  background: '#1976d2',
+  color: '#fff',
+  border: 'none',
+  cursor: 'pointer',
+  boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
+};
+
 const galleryImages = [
   '/IMG-20250127-WA0060.jpg',
   '/IMG-20250128-WA0002.jpg',
@@ -68,13 +80,13 @@ const Productos = () => {
           cliente. Desde uniformes corporativos y escolares hasta ropa
           profesional.
         </ProdCopy>
-        <button style={{marginTop: '1.5rem', padding: '0.7rem 1.5rem', fontSize: '1.1rem', borderRadius: '8px', background: '#1976d2', color: '#fff', border: 'none', cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.12)'}} onClick={()=>setOpenGallery(true)}>
+        <button style={galleryBtnStyle} onClick={()=>setOpenGallery(true)}>
           Ver galería
         </button>
       </TextsContainer>
       <CardsContainer>
         {productData.map((product, index) => (
-          <Cards key={index} bckgrnd={product.bckgrnd}>
+          <Cards key={product.text} bckgrnd={product.bckgrnd}>
             <CardMask>
               <CardText>{product.text}</CardText>
               <CardBtn href={product.href} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
