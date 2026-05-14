@@ -1,0 +1,4 @@
+## 2025-02-14 - Fix unencrypted data transmission and tabnabbing vulnerabilities
+**Vulnerability:** External links (WhatsApp, Facebook, Google Maps, Play Store, App Store) were using unencrypted HTTP protocols (`http://wa.me`) or opening in a new tab (`target="_blank"`) without `rel="noopener noreferrer"`.
+**Learning:** External links lacking `rel="noopener noreferrer"` expose the application to tabnabbing vulnerabilities where the newly opened page can access and maliciously manipulate the origin window's `window.opener` object. Unencrypted `http://` links risk interception of data.
+**Prevention:** Always ensure external links use `https://` for encrypted data transmission and include `target="_blank" rel="noopener noreferrer"` when opening in a new tab to prevent unauthorized access to the `window.opener` object.
