@@ -1,0 +1,3 @@
+## 2025-05-15 - Code Splitting for Below-the-Fold Components
+**Learning:** React components that appear "below the fold" (like `Productos`, `Servicios`, `Contacto`, and `Footer`) are loaded immediately during the initial page render, inflating the initial JavaScript payload size and delaying the Time to Interactive (TTI), even though the user has not scrolled down to see them.
+**Action:** Use `React.lazy` and `Suspense` (with `fallback={null}`) in `src/App.jsx` to defer loading these non-critical components. This optimization standard pattern should be consistently applied to similar single-page sections in the future to improve initial payload size and rendering speeds.

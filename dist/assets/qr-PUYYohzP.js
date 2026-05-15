@@ -1,0 +1,1 @@
+import{r as e,p as r,R as i}from"./Components-DJ0808dB.js";import o from"./Servicios-BdB1WHPe.js";function t(){return e.jsx("main",{children:e.jsx("section",{id:"Servicios",children:e.jsx(o,{})})})}r(document.getElementById("root")).render(e.jsx(i.StrictMode,{children:e.jsx(t,{})}));
