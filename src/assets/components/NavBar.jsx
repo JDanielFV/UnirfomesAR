@@ -117,16 +117,63 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Función para manejar el evento de teclado para el scroll a sección
+  const handleKeyDownSection = (e, sectionId) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      scrollToSection(sectionId);
+    }
+  };
+
+  // Función para manejar el evento de teclado para el scroll a sección y cierre de menú
+  const handleKeyDownMobileSection = (e, sectionId) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      scrollToSection(sectionId);
+      toggleMenu();
+    }
+  };
+
+  // Función para manejar el evento de teclado para el scroll arriba
+  const handleKeyDownTop = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      scrollToTop();
+    }
+  };
+
   return (
     <NavbarContainer>
       {/* Logo de la página */}
-      <Logo onClick={scrollToTop} src="/logo.svg" alt="Logo" />
+      <Logo
+        onClick={scrollToTop}
+        onKeyDown={handleKeyDownTop}
+        src="/logo.svg"
+        alt="Logo"
+        role="button"
+        tabIndex={0}
+      />
 
       {/* Enlaces en vista de escritorio */}
       <NavLinks>
-        <NavLink onClick={() => scrollToSection('Productos')}>Productos</NavLink>
-        <NavLink onClick={() => scrollToSection('Servicios')}>Servicios</NavLink>
-        <NavLink onClick={() => scrollToSection('Contacto')}>Contacto</NavLink>
+        <NavLink
+          onClick={() => scrollToSection('Productos')}
+          onKeyDown={(e) => handleKeyDownSection(e, 'Productos')}
+          role="button"
+          tabIndex={0}
+        >Productos</NavLink>
+        <NavLink
+          onClick={() => scrollToSection('Servicios')}
+          onKeyDown={(e) => handleKeyDownSection(e, 'Servicios')}
+          role="button"
+          tabIndex={0}
+        >Servicios</NavLink>
+        <NavLink
+          onClick={() => scrollToSection('Contacto')}
+          onKeyDown={(e) => handleKeyDownSection(e, 'Contacto')}
+          role="button"
+          tabIndex={0}
+        >Contacto</NavLink>
       </NavLinks>
 
       {/* Icono de menú para dispositivos móviles */}
@@ -142,9 +189,24 @@ const Navbar = () => {
       {/* Menú desplegable en móviles */}
       <MobileMenu id="mobile-menu" isOpen={menuOpen}>
         <MobileNavLinks>
-          <NavLink onClick={() => { scrollToSection('Productos'); toggleMenu(); }}>Productos</NavLink>
-          <NavLink onClick={() => { scrollToSection('Servicios'); toggleMenu(); }}>Servicios</NavLink>
-          <NavLink onClick={() => { scrollToSection('Contacto'); toggleMenu(); }}>Contacto</NavLink>
+          <NavLink
+            onClick={() => { scrollToSection('Productos'); toggleMenu(); }}
+            onKeyDown={(e) => handleKeyDownMobileSection(e, 'Productos')}
+            role="button"
+            tabIndex={0}
+          >Productos</NavLink>
+          <NavLink
+            onClick={() => { scrollToSection('Servicios'); toggleMenu(); }}
+            onKeyDown={(e) => handleKeyDownMobileSection(e, 'Servicios')}
+            role="button"
+            tabIndex={0}
+          >Servicios</NavLink>
+          <NavLink
+            onClick={() => { scrollToSection('Contacto'); toggleMenu(); }}
+            onKeyDown={(e) => handleKeyDownMobileSection(e, 'Contacto')}
+            role="button"
+            tabIndex={0}
+          >Contacto</NavLink>
         </MobileNavLinks>
       </MobileMenu>
     </NavbarContainer>
