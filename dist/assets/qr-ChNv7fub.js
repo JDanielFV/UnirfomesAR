@@ -1,0 +1,1 @@
+import{j as e,n as i,o as r,R as o}from"./Servicios-M0BWP4NE.js";function s(){return e.jsx("main",{children:e.jsx("section",{id:"Servicios",children:e.jsx(i,{})})})}r(document.getElementById("root")).render(e.jsx(o.StrictMode,{children:e.jsx(s,{})}));
