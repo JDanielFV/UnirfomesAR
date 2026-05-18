@@ -1,0 +1,7 @@
+## 2024-05-18 - Prevent Waterfall Fetching with Below-the-fold React.lazy
+**Learning:** While `React.lazy` and `Suspense` effectively split bundle size for below-the-fold components in `App.jsx`, unconditional rendering still triggers immediate network fetches, potentially leading to waterfall blocking. To truly defer loading until they enter the viewport, an Intersection Observer (e.g., a `LazySection` wrapper) and individual `<Suspense>` boundaries must be used.
+**Action:** Use an explicit Intersection Observer wrapper alongside `React.lazy` to conditionally render components strictly when they are close to entering the viewport to avoid unnecessary eager fetching and waterfall requests on initial load.
+
+## 2024-05-18 - Maintain Anchor Links when Lazy Loading
+**Learning:** When using wrappers to defer loading elements for performance optimization (like an `IntersectionObserver` wrapper), wrapping the structural element that carries an `id` used for navigation (e.g., `<section id="Productos">`) will remove that anchor from the DOM completely until scrolled into view. This breaks single-page anchor link navigation (e.g., from a Navbar).
+**Action:** Always ensure structural elements with `id` attributes remain unconditionally in the DOM. Place the lazy loading wrapper *inside* the `<section>` tag, rather than wrapping the entire section, so navigation anchor links continue to work while the content payload is deferred.
