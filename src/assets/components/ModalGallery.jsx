@@ -61,7 +61,13 @@ const ModalGallery = ({ open, onClose, images }) => {
       <ModalContent>
         <GalleryGrid>
           {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
+            <GalleryImg
+              key={idx}
+              loading="lazy"
+              /* Performance Optimization: Delay loading images until they enter the viewport to reduce initial payload */
+              src={img}
+              alt={`Galería ${idx+1}`}
+            />
           ))}
         </GalleryGrid>
       </ModalContent>
