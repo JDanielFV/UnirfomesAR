@@ -1,0 +1,4 @@
+## 2026-05-20 - IntersectionObserver wrapper for React.lazy
+
+**Learning:** When using lazy loading wrappers (e.g., IntersectionObserver wrappers) for sections targeted by anchor links, ensure the wrapper is placed *inside* the structural element carrying the `id` attribute (e.g., `<section id='Productos'>`). Wrapping the outer element removes the anchor from the DOM before it loads, breaking single-page navigation. Also, using React.lazy without an IntersectionObserver still triggers the network request unconditionally on mount, defeating the purpose of lazy loading below-the-fold content.
+**Action:** Always wrap the inner components, not the anchor container itself. Use an IntersectionObserver for below-the-fold components rather than relying solely on `React.lazy` grouped in one `<Suspense>`. Provide a `minHeight` prop to minimize CLS when loading.
