@@ -3,3 +3,7 @@
 ## 2025-05-16 - Adding keyboard accessibility to non-semantic navigation elements
 **Learning:** Found that custom navigation elements (like `styled.img` and `styled.li`) used for page scroll navigation lack keyboard support by default. While mouse users can click them easily via `onClick`, keyboard users are entirely blocked as these elements aren't natively focusable and don't respond to 'Enter' or 'Space' events.
 **Action:** Always provide explicit keyboard support to non-semantic elements used for navigation. Add `role="button"`, `tabIndex={0}`, and an `onKeyDown` event listener that explicitly calls `e.preventDefault()` (to prevent unintended page scrolling when 'Space' is pressed) before triggering the desired action.
+
+## 2025-05-21 - Custom modal accessibility and UX
+**Learning:** Found that custom modal overlays implemented without semantic attributes or keyboard listeners are inaccessible to screen readers and difficult to dismiss for keyboard users. Specifically, missing `role="dialog"`, `aria-modal="true"`, an 'Escape' key listener, and click-outside-to-close behavior creates a poor user experience.
+**Action:** When implementing custom modals, always attach a global `keydown` event listener for 'Escape' in a `useEffect` (with appropriate cleanup), handle outside clicks using `stopPropagation()` on the inner content container, and apply semantic attributes (`role="dialog"`, `aria-modal="true"`, and `aria-label` for close buttons) to ensure full accessibility and standard UX.
