@@ -1,0 +1,3 @@
+## 2024-05-23 - IntersectionObserver and Anchor Links
+**Learning:** When using lazy loading wrappers (like `IntersectionObserver` via `LazySection`) for sections targeted by anchor links for scroll navigation, placing the wrapper OUTSIDE the structural element carrying the `id` attribute (e.g., `<LazySection><section id='Productos'>...</section></LazySection>`) completely removes the element from the DOM until it enters the viewport. This breaks single-page navigation because `document.getElementById('Productos')` will return `null` when a user clicks the anchor link.
+**Action:** Always place the lazy-loading wrapper INSIDE the structural element that holds the navigation `id` attribute (e.g., `<section id='Productos'><LazySection>...</LazySection></section>`).
