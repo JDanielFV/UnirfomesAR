@@ -1,0 +1,3 @@
+## 2024-05-26 - Deferring React Lazy Loading with Intersection Observer
+**Learning:** While `React.lazy` and `Suspense` can split bundles, unconditional rendering of below-the-fold components in the initial DOM tree triggers immediate network fetches for their JS chunks, causing waterfall blocking and competing with critical assets.
+**Action:** To genuinely defer loading until components are needed, conditionally render the lazily-loaded components using an Intersection Observer wrapper (e.g., `<LazySection>`), ensuring the wrapper is placed *inside* any structural `<section id="...">` elements so anchor links continue to function correctly.
