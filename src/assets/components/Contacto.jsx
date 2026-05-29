@@ -13,7 +13,8 @@ const CTitle = styled(Title)`
   color: #000;
 `;
 
-function abrirRedSocial() {
+function abrirRedSocial(e) {
+  if (e) e.preventDefault(); // Prevent unexpected page scroll
   const opcion = prompt("¿Qué red social quieres abrir? Escribe:\n1 para Facebook\n2 para Instagram");
 
   // Fix: Add noopener,noreferrer to window.open calls to prevent tabnabbing vulnerability
@@ -22,7 +23,9 @@ function abrirRedSocial() {
   } else if (opcion === "2") {
     window.open('https://www.instagram.com/uniformesar/', '_blank', 'noopener,noreferrer');
   } else {
-    alert("Por favor elige una opción.");
+    if (opcion !== null) {
+      alert("Por favor elige una opción.");
+    }
   }
 }
 
@@ -41,8 +44,9 @@ const ContactForm = () => {
           title="Google Maps Embed"
         ></MapContainer>
         <ContactList>
-          <ContactText href="https://maps.app.goo.gl/QoeqGcHGB2z7rXL77"><ContactIcon src="ubicacion.svg"></ContactIcon>CallePozo Grande #2, Tecámac.</ContactText>
-          <ContactText href="https://wa.me/+525621288935"><ContactIcon src="whatsapp.svg"></ContactIcon>56-2128-8935</ContactText>
+          {/* Sentinel: Add target="_blank" and rel="noopener noreferrer" to external links, fix wa.me format */}
+          <ContactText href="https://maps.app.goo.gl/QoeqGcHGB2z7rXL77" target="_blank" rel="noopener noreferrer"><ContactIcon src="ubicacion.svg"></ContactIcon>CallePozo Grande #2, Tecámac.</ContactText>
+          <ContactText href="https://wa.me/525621288935" target="_blank" rel="noopener noreferrer"><ContactIcon src="whatsapp.svg"></ContactIcon>56-2128-8935</ContactText>
           <ContactText href="tel:5589500569,103"><ContactIcon src="telefono.svg"></ContactIcon>55-8950-0569 ext. 103</ContactText>
           <ContactText as="div" style={{ cursor: 'default' }}><ContactIcon src="horario.svg"></ContactIcon>Lunes a Viernes de 9:00 am a 2:00 pm</ContactText>
           <ContactText href="#" onClick={abrirRedSocial}><ContactIcon src="facebook.svg"></ContactIcon>A&R Bordados Estampados</ContactText>
