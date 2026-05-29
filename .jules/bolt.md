@@ -1,0 +1,3 @@
+## 2025-02-12 - IntersectionObserver Wrapper for Anchor Linked Sections
+**Learning:** In a single-page app where `id` attributes are used as anchor links for navigation, wrapping the entire `section` element with a lazy loading observer unmounts the anchor target from the DOM initially. This breaks navigation links entirely since the DOM element isn't there to receive focus/scroll when the link is clicked.
+**Action:** When implementing lazy loading for structural components, always place the lazy-load wrapper (`LazySection`) *inside* the structural HTML tag that carries the `id`. Add an estimated `minHeight` to the wrapper to avoid layout shifting (CLS) while waiting for content to render.
