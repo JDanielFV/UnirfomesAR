@@ -13,7 +13,8 @@ const CTitle = styled(Title)`
   color: #000;
 `;
 
-function abrirRedSocial() {
+function abrirRedSocial(e) {
+  if (e) e.preventDefault();
   const opcion = prompt("¿Qué red social quieres abrir? Escribe:\n1 para Facebook\n2 para Instagram");
 
   // Fix: Add noopener,noreferrer to window.open calls to prevent tabnabbing vulnerability
