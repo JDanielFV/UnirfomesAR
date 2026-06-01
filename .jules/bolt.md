@@ -1,0 +1,3 @@
+## 2024-06-01 - React.lazy Network Waterfalls
+**Learning:** React.lazy coupled with unconditional rendering immediately triggers the network fetch for the split bundles on initial load, negating the expected deferred loading performance gains. True lazy loading of below-the-fold components requires conditional rendering (e.g., via an IntersectionObserver wrapper).
+**Action:** When splitting bundles with React.lazy for below-the-fold content, use an IntersectionObserver wrapper (like LazySection) with a defined `minHeight` fallback to conditionally trigger rendering, and ensure the wrapper is placed *inside* structural elements with anchor `id`s to maintain scroll navigation.
