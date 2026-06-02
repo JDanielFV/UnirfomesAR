@@ -1,0 +1,3 @@
+## 2024-05-11 - Lazy Loading Conditionally Rendered Galleries
+**Learning:** Native browser lazy loading (`loading="lazy"`) is crucial for optimizing conditionally rendered, image-heavy components like modals. Without it, the browser may request all images prematurely when the component mounts or attempts to pre-fetch them, causing a massive unnecessary network payload.
+**Action:** Always add `loading="lazy"` to images inside modals or hidden galleries to defer loading until they are actually opened and scrolled into the viewport. Also, always ensure the list key is a unique identifier like the image URL, not just the index, for optimal React rendering performance.
