@@ -1,10 +1,12 @@
+import { Suspense, lazy } from 'react';
 import NavBar from './assets/components/NavBar.jsx'
 import Inicio from './assets/components/Inicio.jsx'
-import Productos from './assets/components/Productos.jsx'
-import Servicios from './assets/components/Servicios.jsx'
-import Contacto from './assets/components/Contacto.jsx'
-import Footer from './assets/components/Footer.jsx'
 
+// Performance Optimization: Defer loading below-the-fold components to reduce initial bundle size and improve Time to Interactive (TTI).
+const Productos = lazy(() => import('./assets/components/Productos.jsx'));
+const Servicios = lazy(() => import('./assets/components/Servicios.jsx'));
+const Contacto = lazy(() => import('./assets/components/Contacto.jsx'));
+const Footer = lazy(() => import('./assets/components/Footer.jsx'));
 
 function App() {
 
@@ -12,10 +14,12 @@ function App() {
     <>
       <NavBar></NavBar>
       <section id='Inicio'><Inicio /></section>
-      <section id='Productos'><Productos /></section>
-      <section id='Servicios'><Servicios /></section>
-      <section id='Contacto'><Contacto /></section>
-      <section id='Contacto'><Footer /></section>
+      <Suspense fallback={null}>
+        <section id='Productos'><Productos /></section>
+        <section id='Servicios'><Servicios /></section>
+        <section id='Contacto'><Contacto /></section>
+        <section id='Contacto'><Footer /></section>
+      </Suspense>
     </>
   )
 }
