@@ -30,7 +30,9 @@ const GalleryGrid = styled.div`
   gap: 1.5rem;
 `;
 
-const GalleryImg = styled.img`
+// ⚡ Bolt: Using loading="lazy" for native lazy loading of images
+// This reduces initial network payload and memory usage by only loading images as they enter the viewport
+const GalleryImg = styled.img.attrs({ loading: 'lazy' })`
   width: 100%;
   height: 220px;
   object-fit: cover;
