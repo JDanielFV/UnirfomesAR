@@ -73,8 +73,9 @@ const Productos = () => {
         </button>
       </TextsContainer>
       <CardsContainer>
-        {productData.map((product, index) => (
-          <Cards key={index} bckgrnd={product.bckgrnd}>
+        {/* Performance Optimization: Use unique identifiers instead of array index for keys to improve rendering efficiency */}
+        {productData.map((product) => (
+          <Cards key={product.text} bckgrnd={product.bckgrnd}>
             <CardMask>
               <CardText>{product.text}</CardText>
               <CardBtn href={product.href} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
