@@ -1,0 +1,3 @@
+## 2024-06-03 - Deferred Component Loading and CLS
+**Learning:** While `React.lazy` splits bundles, unconditional rendering still triggers immediate fetches blocking the main thread. We must use an Intersection Observer (like `LazySection`) for true deferred loading. Furthermore, dropping the `minHeight` immediately upon intersection causes significant Cumulative Layout Shift (CLS) because the network fetch from Suspense takes time, temporarily collapsing the container.
+**Action:** When implementing `LazySection` wrappers with `React.lazy` and `Suspense`, use individual `<Suspense>` boundaries and maintain a fallback `minHeight` (e.g. permanently or through CSS) to prevent CLS while ensuring the wrapper is placed *inside* structural elements bearing anchor `id`s.
