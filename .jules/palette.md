@@ -1,0 +1,3 @@
+## 2026-06-08 - Accessible and Usable Custom Modals
+**Learning:** Custom modals like `ModalGallery` often miss fundamental keyboard navigation (e.g., closing on Escape) and proper ARIA roles (`dialog`, `aria-modal`), making them difficult for screen reader and keyboard-only users to close or understand. Clicking the backdrop to close is also a common expectation that is often missing or incorrectly triggers on the content itself.
+**Action:** Always add an `Escape` key listener via `useEffect`, an outside click handler checking `e.target === e.currentTarget`, and semantic attributes (`role="dialog"`, `aria-modal="true"`, `aria-label`) to custom modal overlays to ensure accessibility and expected UX.
