@@ -1,0 +1,3 @@
+## 2024-06-11 - Lazy Loading Anchor Links and CLS
+**Learning:** When using IntersectionObserver wrappers for lazy loading sections targeted by anchor links, placing the wrapper outside the structural element carrying the `id` attribute removes the anchor from the DOM before it loads, breaking single-page navigation. Additionally, removing the `minHeight` of the wrapper immediately upon intersection causes a severe CLS regression because the network fetch triggered by `Suspense` takes time.
+**Action:** Always place the IntersectionObserver wrapper *inside* the element carrying the `id` attribute. Maintain the `minHeight` on the wrapper permanently or until the child component is fully rendered to prevent container collapse.
