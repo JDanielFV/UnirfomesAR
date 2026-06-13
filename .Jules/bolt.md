@@ -1,0 +1,3 @@
+## 2025-05-08 - Adding lazy loading to hidden interactive components
+**Learning:** Native browser lazy loading (`loading="lazy"`) is extremely effective for optimizing image-heavy components like galleries, especially when they are hidden within interactive or conditionally rendered components like modals. It prevents massive unnecessary network requests until the modal is actually opened, improving the initial page load time significantly. Also, using unique image URLs as React keys instead of map indexes prevents unnecessary re-renders.
+**Action:** Always add `loading="lazy"` to `<img />` tags rendered inside modals or hidden containers if they load multiple images. Also, prioritize using unique data properties (like URLs) for React keys instead of array indices.
