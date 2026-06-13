@@ -1,0 +1,3 @@
+## 2024-05-18 - Custom Modal Overlay Accessibility
+**Learning:** When building custom modal overlays, implementing 'Escape' key support and an outside click handler significantly improves usability, but the outside click handler must use `e.target === e.currentTarget` on the overlay container instead of `e.stopPropagation()` on the content to avoid an anti-pattern. Further, modals must have `role="dialog"`, `aria-modal="true"`, and an `aria-label` on close buttons to meet accessibility standards.
+**Action:** Always implement global `Escape` key event listeners via `useEffect` with cleanup, use `e.target === e.currentTarget` for clicking outside, and apply `role="dialog"`, `aria-modal="true"`, and localized `aria-label` to custom modals and their close buttons.
