@@ -1,0 +1,3 @@
+## 2024-06-14 - Deferred Component Lazy Loading
+**Learning:** React.lazy alone splits the bundle but doesn't necessarily prevent the browser from eagerly downloading all split chunks if the lazy components are rendered unconditionally. In this codebase, unconditionally rendering below-the-fold components using React.lazy combined with Suspense will block the network with unneeded Javascript loads right on initial paint.
+**Action:** When lazy-loading below-the-fold components (like heavy UI elements or image galleries), always wrap them in an IntersectionObserver (e.g. `LazySection`) to delay the actual rendering until they are near the viewport, thus truly deferring the network request and improving initial load performance.

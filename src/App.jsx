@@ -1,10 +1,12 @@
+import React, { Suspense } from 'react';
 import NavBar from './assets/components/NavBar.jsx'
 import Inicio from './assets/components/Inicio.jsx'
-import Productos from './assets/components/Productos.jsx'
-import Servicios from './assets/components/Servicios.jsx'
-import Contacto from './assets/components/Contacto.jsx'
-import Footer from './assets/components/Footer.jsx'
+import LazySection from './assets/components/LazySection.jsx'
 
+const Productos = React.lazy(() => import('./assets/components/Productos.jsx'));
+const Servicios = React.lazy(() => import('./assets/components/Servicios.jsx'));
+const Contacto = React.lazy(() => import('./assets/components/Contacto.jsx'));
+const Footer = React.lazy(() => import('./assets/components/Footer.jsx'));
 
 function App() {
 
@@ -12,10 +14,34 @@ function App() {
     <>
       <NavBar></NavBar>
       <section id='Inicio'><Inicio /></section>
-      <section id='Productos'><Productos /></section>
-      <section id='Servicios'><Servicios /></section>
-      <section id='Contacto'><Contacto /></section>
-      <section id='Contacto'><Footer /></section>
+      <section id='Productos'>
+        <LazySection minHeight="100vh">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Productos />
+          </Suspense>
+        </LazySection>
+      </section>
+      <section id='Servicios'>
+        <LazySection minHeight="100vh">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Servicios />
+          </Suspense>
+        </LazySection>
+      </section>
+      <section id='Contacto'>
+        <LazySection minHeight="100vh">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Contacto />
+          </Suspense>
+        </LazySection>
+      </section>
+      <section id='Contacto'>
+        <LazySection minHeight="200px">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Footer />
+          </Suspense>
+        </LazySection>
+      </section>
     </>
   )
 }
