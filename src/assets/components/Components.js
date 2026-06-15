@@ -121,8 +121,14 @@ gap: 3dvi;
   }
 `;
 
-export const Cards = styled.div`
-  background-image: url(${props => props.bckgrnd}); 
+// ⚡ Bolt: Performance optimization
+// Using .attrs for dynamic styles to prevent generating a new CSS class for every unique bckgrnd value
+// Reduces DOM style sheet injections and memory usage
+export const Cards = styled.div.attrs(props => ({
+  style: {
+    backgroundImage: `url(${props.bckgrnd})`
+  }
+}))`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -252,15 +258,22 @@ export const CopyServicios = styled.p`
     max-width: 95%; /* Ajustar el ancho en pantallas pequeñas */
   }
 `
-export const ServicioContainer = styled.div`
+// ⚡ Bolt: Performance optimization
+// Using .attrs for dynamic styles to prevent generating a new CSS class for every unique src/alignItems/color
+// CSS Variables used for ::before pseudoelements as inline styles don't apply to them directly
+export const ServicioContainer = styled.div.attrs(props => ({
+  style: {
+    backgroundImage: `url(${props.src})`,
+    alignItems: props.alignItems,
+    '--bg-gradient': `linear-gradient(${props.color})`
+  }
+}))`
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.alignItems};
   justify-content: space-between;
   height: auto;
   width: auto;
-  background-image: url(${props => props.src});
   background-size: cover;
   background-position: center;
   padding: 15rem 4rem 15rem 4rem ;
@@ -274,7 +287,7 @@ export const ServicioContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(${props => props.color});
+    background: var(--bg-gradient);
     z-index: 1;
   }
 
