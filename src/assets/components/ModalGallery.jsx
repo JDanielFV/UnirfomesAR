@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import styled from "styled-components";
 
@@ -53,6 +54,12 @@ const CloseBtn = styled.button`
   z-index: 1001;
 `;
 
+// Memoize individual gallery image to prevent unnecessary re-renders
+const GalleryImageItem = React.memo(({ img, idx }) => (
+  <GalleryImg src={img} alt={`Galería ${idx+1}`} />
+));
+GalleryImageItem.displayName = "GalleryImageItem";
+
 const ModalGallery = ({ open, onClose, images }) => {
   if (!open) return null;
   return (
@@ -61,7 +68,7 @@ const ModalGallery = ({ open, onClose, images }) => {
       <ModalContent>
         <GalleryGrid>
           {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
+            <GalleryImageItem key={img || idx} img={img} idx={idx} />
           ))}
         </GalleryGrid>
       </ModalContent>
