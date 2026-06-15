@@ -61,7 +61,10 @@ const ModalGallery = ({ open, onClose, images }) => {
       <ModalContent>
         <GalleryGrid>
           {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
+            <React.Fragment key={idx}>
+              {/* Bolt: Added lazy loading to images to significantly reduce initial network payload and memory usage */}
+              <GalleryImg src={img} alt={`Galería ${idx+1}`} loading="lazy" />
+            </React.Fragment>
           ))}
         </GalleryGrid>
       </ModalContent>
