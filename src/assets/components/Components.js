@@ -121,8 +121,12 @@ gap: 3dvi;
   }
 `;
 
-export const Cards = styled.div`
-  background-image: url(${props => props.bckgrnd}); 
+// Bolt: Use .attrs for dynamic inline styles to prevent styled-components from generating excessive CSS classes
+export const Cards = styled.div.attrs(props => ({
+  style: {
+    backgroundImage: `url(${props.bckgrnd})`
+  }
+}))`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
