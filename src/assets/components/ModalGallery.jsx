@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const ModalOverlay = styled.div`
@@ -51,17 +51,45 @@ const CloseBtn = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 1001;
+
+  &:focus-visible {
+    outline: 3px solid #fff;
+    box-shadow: 0 0 0 5px #1976d2;
+  }
 `;
 
 const ModalGallery = ({ open, onClose, images }) => {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    if (open) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open, onClose]);
+
   if (!open) return null;
+
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <ModalOverlay>
-      <CloseBtn onClick={onClose}>&times;</CloseBtn>
-      <ModalContent>
+    <ModalOverlay onClick={handleOverlayClick}>
+      <CloseBtn onClick={onClose} aria-label="Cerrar galería de imágenes">&times;</CloseBtn>
+      <ModalContent role="dialog" aria-modal="true" aria-label="Galería de imágenes">
         <GalleryGrid>
           {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
+            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={img} />
           ))}
         </GalleryGrid>
       </ModalContent>
