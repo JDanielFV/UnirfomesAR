@@ -1,0 +1,3 @@
+## 2025-05-01 - Native Lazy Loading in Scrollable Modals
+**Learning:** For components that render large lists of images inside a custom modal overlay with an internal scrollable container (e.g., `overflow: auto`), applying native `loading="lazy"` attributes directly to the image elements provides a significant performance optimization by preventing massive network requests until the user scrolls them into the viewport.
+**Action:** When implementing new gallery modals or similar scrollable containers with many images, proactively apply `loading="lazy"` to `img` tags to reduce initial modal payload and ensure a fast, responsive user experience.
