@@ -61,7 +61,9 @@ const ModalGallery = ({ open, onClose, images }) => {
       <ModalContent>
         <GalleryGrid>
           {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
+            // Bolt: Add native lazy loading to defer loading of off-screen images,
+            // reducing initial network congestion and memory usage when opening the modal with 30+ images
+            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} loading="lazy" />
           ))}
         </GalleryGrid>
       </ModalContent>
