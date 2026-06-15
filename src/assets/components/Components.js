@@ -121,8 +121,13 @@ gap: 3dvi;
   }
 `;
 
-export const Cards = styled.div`
-  background-image: url(${props => props.bckgrnd}); 
+// ⚡ Bolt: Use .attrs to apply dynamic background image as inline style
+// to prevent generating a new CSS class for every distinct image URL
+export const Cards = styled.div.attrs(props => ({
+  style: {
+    backgroundImage: `url(${props.bckgrnd})`,
+  },
+}))`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -252,7 +257,13 @@ export const CopyServicios = styled.p`
     max-width: 95%; /* Ajustar el ancho en pantallas pequeñas */
   }
 `
-export const ServicioContainer = styled.div`
+// ⚡ Bolt: Use .attrs to apply dynamic background image as inline style
+// to prevent generating a new CSS class for every distinct image URL
+export const ServicioContainer = styled.div.attrs(props => ({
+  style: {
+    backgroundImage: `url(${props.src})`,
+  },
+}))`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -260,7 +271,6 @@ export const ServicioContainer = styled.div`
   justify-content: space-between;
   height: auto;
   width: auto;
-  background-image: url(${props => props.src});
   background-size: cover;
   background-position: center;
   padding: 15rem 4rem 15rem 4rem ;

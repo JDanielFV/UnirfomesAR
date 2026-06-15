@@ -30,7 +30,10 @@ const GalleryGrid = styled.div`
   gap: 1.5rem;
 `;
 
-const GalleryImg = styled.img`
+// ⚡ Bolt: Add native lazy loading to images to prevent fetching all 31 images at once
+const GalleryImg = styled.img.attrs({
+  loading: 'lazy',
+})`
   width: 100%;
   height: 220px;
   object-fit: cover;
