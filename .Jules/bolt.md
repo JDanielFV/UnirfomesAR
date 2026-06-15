@@ -1,0 +1,3 @@
+## 2024-05-13 - [Optimize gallery rendering and inline styles]
+**Learning:** Native browser lazy loading (`loading="lazy"`) should be consistently applied to image-heavy components like modals to reduce the initial network payload. Additionally, inline styles in React trigger object reallocation on every render, which can degrade performance. Using stable unique keys instead of loop indices prevents unnecessary DOM re-creation during list updates.
+**Action:** Extract static inline style objects to `styled-components` or constants outside the component scope, always add `loading="lazy"` to images below the fold or inside interactive components, and use established unique identifiers for keys when mapping arrays in React.
