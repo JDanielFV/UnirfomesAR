@@ -63,7 +63,7 @@ const Navbar = () => {
                     <FooterTitle>Contactanos</FooterTitle>
                     <FooterLink href='tel:+525621288935'>Telefono</FooterLink>
                     <FooterLink href='mailto:contacto@uniformesar.com'>Correo</FooterLink>
-                    <FooterLink href='https://www.facebook.com/profile.php?id=61584467946957'>Facebook</FooterLink>
+                    <FooterLink href='https://www.facebook.com/profile.php?id=61584467946957' target="_blank" rel="noopener noreferrer">Facebook</FooterLink>
                 </FooterContainer>
                 <FooterContainer>
                     <FooterTitle>Horarios</FooterTitle>
@@ -71,7 +71,7 @@ const Navbar = () => {
                     <FooterLink as="div" style={{ cursor: 'default' }}>9:00 am a 2:00 pm</FooterLink>
                 </FooterContainer>
             </Footer>
-            <Disclaimer href='http://wa.me/+525649770838'>Desarrollado por: Daniel Flores - 2026</Disclaimer>
+            <Disclaimer href='https://wa.me/+525649770838' target="_blank" rel="noopener noreferrer">Desarrollado por: Daniel Flores - 2026</Disclaimer>
         </>
     );
 };
