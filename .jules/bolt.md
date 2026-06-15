@@ -1,0 +1,3 @@
+## 2025-04-08 - Native Lazy Loading in Modals
+**Learning:** Adding `loading="lazy"` to a large array of images in a modal component is an effective, low-risk way to defer loading of offscreen images, especially when the modal might render many elements simultaneously upon opening.
+**Action:** Always consider `loading="lazy"` for large sets of images, even if they are within a hidden or dynamically rendered component like a modal, to prevent network and memory spikes.
