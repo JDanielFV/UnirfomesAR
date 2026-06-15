@@ -1,0 +1,3 @@
+## 2024-05-24 - Modal Gallery Hidden Render Payload Issue
+**Learning:** Found an edge case with styled-components and modals in this app: The `ModalGallery` mounts but is hidden by React until `open` is true. Because it renders the image components eagerly, it triggered over 30 image requests on initial page load, downloading the entire gallery even though the modal wasn't open yet.
+**Action:** When a modal contains heavy media, apply `loading="lazy"` to defer network payload until the browser intersects the elements (e.g. when the modal opens and elements become visible in the viewport), effectively lazy loading the hidden content.
