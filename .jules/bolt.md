@@ -1,0 +1,4 @@
+
+## 2025-02-04 - Deferring React.lazy loads with IntersectionObserver
+**Learning:** While `React.lazy` splits bundles, unconditional rendering in `App.jsx` triggers immediate network fetches. To truly defer loading below-the-fold components until they enter the viewport and prevent waterfall blocking, they must be conditionally rendered using an `IntersectionObserver`. Additionally, applying a `minHeight` to the wrapper element is critical; removing it prematurely collapses the container to 0px while the child fetches, causing a severe Cumulative Layout Shift (CLS).
+**Action:** When using `React.lazy` for structural sections, create a wrapper component (e.g., `LazySection`) using `IntersectionObserver` to conditionally render the `Suspense` boundary. Always apply a static or estimated `minHeight` prop to the wrapper to reserve space and prevent layout shifts during the deferred load.
