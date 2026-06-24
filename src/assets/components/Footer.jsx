@@ -63,7 +63,7 @@ const Navbar = () => {
                     <FooterTitle>Contactanos</FooterTitle>
                     <FooterLink href='tel:+525621288935'>Telefono</FooterLink>
                     <FooterLink href='mailto:contacto@uniformesar.com'>Correo</FooterLink>
-                    <FooterLink href='https://www.facebook.com/profile.php?id=61584467946957'>Facebook</FooterLink>
+                    <FooterLink href='https://www.facebook.com/profile.php?id=61584467946957' target="_blank" rel="noopener noreferrer">Facebook</FooterLink>
                 </FooterContainer>
                 <FooterContainer>
                     <FooterTitle>Horarios</FooterTitle>
