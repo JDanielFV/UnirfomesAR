@@ -1,0 +1,3 @@
+## 2025-06-28 - Image Lazy Loading Optimization in Modal Galleries
+**Learning:** Off-screen images in modal galleries are fetched eagerly even when not immediately visible, wasting network bandwidth and slowing down the initial render. Furthermore, using a simple array index as a React key (`key={idx}`) can cause potential rendering bugs when rendering a dynamic gallery array.
+**Action:** Add the `loading="lazy"` attribute to `<img>` elements within scrollable containers or modals (like `ModalGallery`) to defer fetching off-screen images. Always use composite keys (e.g., `${img}-${idx}`) rather than simple array indices when mapping over arrays to render elements in React.
