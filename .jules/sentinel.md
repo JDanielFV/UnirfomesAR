@@ -1,0 +1,4 @@
+## 2025-02-21 - [Prevent Tabnabbing on External Links]
+**Vulnerability:** External links (like those in `Footer.jsx` and `PromoApp.jsx`) opening in new contexts did not have the `rel="noopener noreferrer"` attribute, exposing the application to reverse tabnabbing vulnerabilities where the newly opened tab can manipulate the original application's `window.opener`.
+**Learning:** These vulnerabilities often exist because developers focus on UX (opening links in a new tab) and add `target="_blank"` without realizing that doing so implicitly grants the target page access to the referring page's window object unless specifically prevented.
+**Prevention:** Always add `target="_blank"` and `rel="noopener noreferrer"` to external `href` links (especially those that point to non-trusted/external domains like app stores or social media profiles) to severe the relationship between the tabs.
