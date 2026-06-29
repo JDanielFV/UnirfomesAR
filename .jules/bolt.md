@@ -1,0 +1,3 @@
+## 2024-06-29 - [Image Lazy Loading in React Modals]
+**Learning:** Using simple array indices as keys in React lists (like image galleries) can lead to rendering bugs, and off-screen images within scrollable modals (like image galleries) should have `loading="lazy"` to defer fetching and save bandwidth, preventing main thread blocking upon initial render.
+**Action:** When adding images to scrollable containers or mapping over arrays to render elements in React, always use `loading="lazy"` on `<img>` elements to defer fetching and composite keys (e.g., `${img}-${idx}`) rather than simple array indices.
