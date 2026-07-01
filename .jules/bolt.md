@@ -1,0 +1,3 @@
+## 2024-07-01 - Optimizing Modal Gallery Image Rendering
+**Learning:** Loading large sets of unoptimized images simultaneously in a modal (e.g., `ModalGallery.jsx`) block the main thread and consume significant bandwidth. Simple array indices as `key` props can cause bugs when items reorder, but using them alone is acceptable. However, composite keys provide better rendering stability, and adding `loading="lazy"` to `<img>` tags offloads the loading logic to the browser, fetching only when images are close to the viewport.
+**Action:** When implementing image galleries or modals with many images, add `loading="lazy"` by default and use composite keys (like `${img}-${idx}`) for the mapped child elements to improve initial render times and stability.
