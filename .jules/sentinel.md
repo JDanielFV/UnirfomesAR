@@ -1,0 +1,4 @@
+## 2024-05-24 - Missing Tabnabbing Protection on External Links
+**Vulnerability:** External links (using `target="_blank"`) that open third-party, untrusted URLs without `rel="noopener noreferrer"` can expose the application to reverse tabnabbing. The newly opened tab can gain partial access to the original `window` object via `window.opener`, allowing it to potentially redirect the original tab to a malicious site (phishing).
+**Learning:** Found several external links in React components (`PromoApp.jsx`, `Contacto.jsx`, `Footer.jsx`) directing to app stores, WhatsApp, Facebook, and Google Maps that lacked `rel="noopener noreferrer"`.
+**Prevention:** Always add `rel="noopener noreferrer"` to any anchor tag that uses `target="_blank"`, unless the destination is a fully trusted, first-party URL.
