@@ -1,0 +1,3 @@
+## 2024-07-01 - Accessible Custom Modals
+**Learning:** Custom modal overlays frequently lack keyboard accessibility (Escape key dismissal) and miss essential ARIA attributes (`role="dialog"`, `aria-modal="true"`) causing screen readers to misinterpret the modal structure and trap users. Outside click dismissal is also often missing or improperly implemented, causing accidental closures.
+**Action:** Always implement a global 'keydown' listener for the 'Escape' key, an explicit outside-click verification (`e.target === e.currentTarget`), and standard modal ARIA attributes when building custom modal components to ensure a fully accessible UX.
