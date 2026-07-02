@@ -1,0 +1,4 @@
+## 2024-05-24 - Tabnabbing & Insecure Protocol on External Links
+**Vulnerability:** External links (like Facebook and Whatsapp profiles) were missing `target="_blank"` and `rel="noopener noreferrer"`. The WhatsApp link also used an insecure `http://` protocol instead of `https://`.
+**Learning:** When using anchor tags to open external services, failing to use `rel="noopener noreferrer"` alongside `target="_blank"` creates a tabnabbing vulnerability where the newly opened tab can manipulate the original tab's location via the `window.opener` object. Hardcoding `http://` instead of `https://` can lead to insecure, unencrypted data transmission and MITM risks.
+**Prevention:** Always include `target="_blank"` and `rel="noopener noreferrer"` on any `a` tag or `window.open` call pointing to an external domain. Always enforce `https://` protocols over `http://` for all external links.
