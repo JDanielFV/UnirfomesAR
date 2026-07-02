@@ -24,7 +24,7 @@ const ScrollButton = styled.button`
 const ScrollToContactButton = ({ text }) => {
   // Función para hacer scroll suave a la sección de contacto
   const scrollToContact = () => {
-    const section = document.getElementById('contacto');
+    const section = document.getElementById('Contacto');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }

@@ -56,7 +56,7 @@ const Navbar = () => {
                 <FooterContainer>
                     <FooterTitle>Mapa de sitio</FooterTitle>
                     <FooterLink onClick={() => scrollToSection('Productos')}>Productos</FooterLink>
-                    <FooterLink onClick={() => scrollToSection('servicios')}>Servicios</FooterLink>
+                    <FooterLink onClick={() => scrollToSection('Servicios')}>Servicios</FooterLink>
                     <FooterLink onClick={() => scrollToSection('Contacto')}>Contacto</FooterLink>
                 </FooterContainer>
                 <FooterContainer>
