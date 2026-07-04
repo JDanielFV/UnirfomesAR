@@ -133,10 +133,12 @@ const AppPromo = () => {
       </AppContainer>
       <AppMockup src="/mockups.gif" />
       <AppLinkContainer>
-        <AppLink href="https://play.google.com/store/apps/details?id=com.geologisticerp&hl=es_MX">
+        {/* 🛡️ Sentinel: Add tabnabbing protection to external links */}
+        <AppLink href="https://play.google.com/store/apps/details?id=com.geologisticerp&hl=es_MX" target="_blank" rel="noopener noreferrer">
           <AppLinkImg src="/Playstore.png" />
         </AppLink>
-        <AppLink href="https://apps.apple.com/mx/app/geologistic-erp/id6452047734">
+        {/* 🛡️ Sentinel: Add tabnabbing protection to external links */}
+        <AppLink href="https://apps.apple.com/mx/app/geologistic-erp/id6452047734" target="_blank" rel="noopener noreferrer">
           <AppLinkImg src="/Appstore.png" />
         </AppLink>
       </AppLinkContainer>
