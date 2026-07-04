@@ -60,8 +60,9 @@ const ModalGallery = ({ open, onClose, images }) => {
       <CloseBtn onClick={onClose}>&times;</CloseBtn>
       <ModalContent>
         <GalleryGrid>
+          {/* ⚡ Bolt: Lazy load images in the scrollable gallery to defer fetching off-screen images, saving bandwidth and preventing main thread blocking. */}
           {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
+            <GalleryImg loading="lazy" src={img} alt={`Galería ${idx+1}`} key={`${img}-${idx}`} />
           ))}
         </GalleryGrid>
       </ModalContent>
