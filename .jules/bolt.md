@@ -1,0 +1,3 @@
+## 2024-07-04 - Lazy loading images in scrollable galleries and composite keys
+**Learning:** Adding lazy loading to `<img />` tags inside of modals and galleries prevents the browser from downloading all off-screen images immediately upon component render, reducing initial bandwidth consumption and preventing blocking the main thread. We must also use composite keys for lists with duplicate potential data to prevent re-rendering issues.
+**Action:** When implementing modal galleries or long lists of images, add the `loading="lazy"` attribute to `<img />` elements and use a composite key for mapped list elements.
