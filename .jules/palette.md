@@ -3,3 +3,7 @@
 ## 2025-05-16 - Adding keyboard accessibility to non-semantic navigation elements
 **Learning:** Found that custom navigation elements (like `styled.img` and `styled.li`) used for page scroll navigation lack keyboard support by default. While mouse users can click them easily via `onClick`, keyboard users are entirely blocked as these elements aren't natively focusable and don't respond to 'Enter' or 'Space' events.
 **Action:** Always provide explicit keyboard support to non-semantic elements used for navigation. Add `role="button"`, `tabIndex={0}`, and an `onKeyDown` event listener that explicitly calls `e.preventDefault()` (to prevent unintended page scrolling when 'Space' is pressed) before triggering the desired action.
+
+## 2024-07-06 - Modal Accessibility
+**Learning:** Adding keyboard dismissal (Escape) and click-outside handling to custom modals ensures a functional and robust user experience. Also, using composite keys (`${img}-${idx}`) for mapped items in galleries prevents potential rendering bugs caused by duplicate images. `role="dialog"` and `aria-modal="true"` let screen readers properly handle modals.
+**Action:** Always implement ESC-key to close, outside-click handling, and proper ARIA roles for custom modal elements. Ensure mapped elements use strong composite keys to maintain safe rendering.
