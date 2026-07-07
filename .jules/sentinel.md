@@ -1,0 +1,4 @@
+## 2024-05-24 - [Tabnabbing Protection on External Links]
+**Vulnerability:** External links (`href="http..."`) missing the `rel="noopener noreferrer"` attribute alongside `target="_blank"` are vulnerable to reverse tabnabbing, allowing the newly opened page to hijack the original page via the `window.opener` object.
+**Learning:** Found multiple instances where `target="_blank"` was either missing alongside external links or lacked the necessary `rel` attribute for security in React components. Also observed that React does not automatically apply these protections to custom component wrappers or raw `<a>` tags.
+**Prevention:** Ensure all external links utilizing `target="_blank"` explicitly include `rel="noopener noreferrer"`. Also, note that UX anti-patterns suggest skipping `target="_blank"` entirely for native protocol handlers like `tel:` and `mailto:`.
