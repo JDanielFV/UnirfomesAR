@@ -1,0 +1,3 @@
+## 2024-07-08 - Modal Accessibility & UX Enhancements
+**Learning:** Custom modal implementations frequently miss basic accessibility and UX features, such as 'Escape' key support for dismissal, clicking outside to close, and proper ARIA roles (`role="dialog"`, `aria-modal="true"`, `aria-label`). Users relying on keyboards or screen readers can get trapped or confused without these standard interactions.
+**Action:** When building or reviewing custom modals, consistently implement 'Escape' key event listeners, outside-click handlers using `e.target === e.currentTarget`, and ensure container accessibility attributes are present.
