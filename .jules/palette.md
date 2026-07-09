@@ -1,0 +1,3 @@
+## YYYY-MM-DD - [Title]
+**Learning:** Adding custom modal overlays requires manual implementation of standard dialog accessibility features like Escape key dismissal, outside click closing, and correct ARIA roles to ensure the modal functions naturally for all users.
+**Action:** When implementing custom modal overlays, always ensure accessibility and proper UX by attaching a global 'keydown' event listener for 'Escape' key dismissal, adding 'role="dialog"' and 'aria-modal="true"' attributes to the modal container, and implementing an outside-click handler by verifying 'e.target === e.currentTarget' on the overlay wrapper.
