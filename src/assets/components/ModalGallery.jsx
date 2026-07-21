@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const ModalOverlay = styled.div`
@@ -54,14 +54,33 @@ const CloseBtn = styled.button`
 `;
 
 const ModalGallery = ({ open, onClose, images }) => {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    if (open) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open, onClose]);
+
   if (!open) return null;
+
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <ModalOverlay>
-      <CloseBtn onClick={onClose}>&times;</CloseBtn>
+    <ModalOverlay onClick={handleOverlayClick} role="dialog" aria-modal="true">
+      <CloseBtn onClick={onClose} aria-label="Cerrar">&times;</CloseBtn>
       <ModalContent>
         <GalleryGrid>
           {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
+            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={`${img}-${idx}`} />
           ))}
         </GalleryGrid>
       </ModalContent>
