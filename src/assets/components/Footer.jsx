@@ -63,7 +63,8 @@ const Navbar = () => {
                     <FooterTitle>Contactanos</FooterTitle>
                     <FooterLink href='tel:+525621288935'>Telefono</FooterLink>
                     <FooterLink href='mailto:contacto@uniformesar.com'>Correo</FooterLink>
-                    <FooterLink href='https://www.facebook.com/profile.php?id=61584467946957'>Facebook</FooterLink>
+                    {/* 🛡️ Sentinel: Add target="_blank" and mitigate reverse tabnabbing risk with rel="noopener noreferrer" */}
+                    <FooterLink href='https://www.facebook.com/profile.php?id=61584467946957' target="_blank" rel="noopener noreferrer">Facebook</FooterLink>
                 </FooterContainer>
                 <FooterContainer>
                     <FooterTitle>Horarios</FooterTitle>
