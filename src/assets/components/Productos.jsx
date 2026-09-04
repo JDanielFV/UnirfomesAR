@@ -73,8 +73,9 @@ const Productos = () => {
         </button>
       </TextsContainer>
       <CardsContainer>
+        {/* ⚡ Bolt: Use composite key based on background and index to prevent re-rendering issues */}
         {productData.map((product, index) => (
-          <Cards key={index} bckgrnd={product.bckgrnd}>
+          <Cards key={`${product.bckgrnd}-${index}`} bckgrnd={product.bckgrnd}>
             <CardMask>
               <CardText>{product.text}</CardText>
               <CardBtn href={product.href} target="_blank" rel="noopener noreferrer">Conoce más</CardBtn>
