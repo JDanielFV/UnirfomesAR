@@ -54,10 +54,20 @@ const CloseBtn = styled.button`
 `;
 
 const ModalGallery = ({ open, onClose, images }) => {
+  React.useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (open) {
+      document.addEventListener('keydown', handleEsc);
+      return () => document.removeEventListener('keydown', handleEsc);
+    }
+  }, [open, onClose]);
+
   if (!open) return null;
   return (
-    <ModalOverlay>
-      <CloseBtn onClick={onClose}>&times;</CloseBtn>
+    <ModalOverlay onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <CloseBtn aria-label="Cerrar" onClick={onClose}>&times;</CloseBtn>
       <ModalContent>
         <GalleryGrid>
           {images.map((img, idx) => (
