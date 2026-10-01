@@ -60,8 +60,9 @@ const ModalGallery = ({ open, onClose, images }) => {
       <CloseBtn onClick={onClose}>&times;</CloseBtn>
       <ModalContent>
         <GalleryGrid>
+          {/* ⚡ Bolt: Use composite keys for primitive arrays and add lazy loading to defer off-screen image requests */}
           {images.map((img, idx) => (
-            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={idx} />
+            <GalleryImg src={img} alt={`Galería ${idx+1}`} key={`${img}-${idx}`} loading="lazy" />
           ))}
         </GalleryGrid>
       </ModalContent>
